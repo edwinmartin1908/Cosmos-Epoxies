@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="cosmos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+ <!--Header / Navbar-->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="navbar__logo">
+                <img src="cosmoslogo.png" alt="logo">
+            </a>
+            <button class="navbtn">☰</button>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__link">COSMOS Learn Hub</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="products.html" class="navbar__link">Products</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<body>
+    <!--Hero Section-->
+    <section class="hero-section">
+        <div class="hero-section__hero-details">
+            <h1 class="subhero-section-title">All our coatings</h1>
+            <p class="subhero-section-subtitle">Filter, compare, and choose the perfect coating for your project</p>
+        </div>
+    </div>
+    </section>
+    
+    <!--Products Filter-->
+    <section class="section-content products-filter">
+        <h3 class="horizontal-filter-section-title">Featured Topics</h3>
+        <div class="filter-list products-filter-list">
+            <div class="filter-item">
+                <input type="checkbox" onchange="FilterProduct('All')" class="checkbox" value="All">
+                <h4 class="filter-item-text">All</h4>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" onchange="FilterProduct('epoxy')" class="checkbox" value="epoxy">
+                <h4 class="filter-item-text">Cosmo-Epoxies</h4>
+            </div>
+                <div class="filter-item">
+                <input type="checkbox" onchange="FilterProduct('poly')" class="checkbox" value="poly">
+                <h4 class="filter-item-text">Polyurethane-p65</h4>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" onchange="FilterProduct('prim')" class="checkbox" value="prim">
+                <h4 class="filter-item-text">Cosmo-Prim</h4>
+            </div>
+        </div>
+    </section>        
+                
+    <section class="section-content products-grid">
+        <div class="products-grid__grid"></div>
+    </section>            
+                   
+    <!--Footer-->
+    <footer class="footer">
+            <div class="footer__footer-container">
+                <div class="footer__list">
+                    <h2 class="footer__title">Social Media</h2>
+                    <div class="footer__social-media-list">                       
+                        <a href="https://www.youtube.com/@COSMOSCOATINGS" class="footer_social-media-link" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/98321246/admin/dashboard/" class="footer_social-media-link" target="_blank"><i class="fa-brands fa-linkedin"></i></a>                       
+                    </div>
+                </div>
+                <div class="footer__list">
+                    <h2 class="footer__title">Company</h2>
+                    <a href="products.html" class="footer__link"><p>Products</p></a>
+                    <a href="blog.html" class="footer__link"><p>Cosmos Learn Hub</p></a>
+                </div>
+                <div class="footer__list">
+                    <h2 class="footer__title">Products</h2>
+                    <a href="a81.html" class="footer__link"><p>Cosmos Epoxy A-81</p></a>
+                    <a href="b81.html" class="footer__link"><p>Cosmos Epoxy B-81</p></a>
+                    <a href="m81.html" class="footer__link"><p>Cosmos Epoxy M-81</p></a>
+                    <a href="poly.html" class="footer__link"><p>Cosmos Polyurethane</p></a>
+                    <a href="prim.html" class="footer__link"><p>Cosmos Prim</p></a>
+                </div>
+                <div class="footer__list">
+                    <h2 class="footer__title">Contact</h2>
+                    <p>Lima, Perú</p>
+                    <p>+51 982.546.418</p>
+                    <p>info@cosmosepoxies.com</p>
+                </div>
+            </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="navbar.js"></script>
+</body>
+
+</html>
