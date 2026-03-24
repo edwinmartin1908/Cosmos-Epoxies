@@ -1,0 +1,52 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Product from "../layouts/product.astro";
+
+const product = {
+  name: "COSMO-POLYURETHANE™",
+  subtitle:
+    "Aliphatic Polyurethane High-Performance Finish with Superior Gloss Retention",
+  image: "src/assets/products/poly.png",
+  description:
+    "COSMO-POLYURETHANE™ is a two-component acrylic aliphatic polyurethane coating designed to deliver a high-performance, durable finish for industrial and marine environments. With a high-solids formulation, it provides long-term protection while maintaining excellent gloss and color retention under prolonged exposure to weathering conditions. This coating offers strong resistance to abrasion and a wide range of chemical agents, making it ideal as a final protective and aesthetic layer in demanding service environments. Its aliphatic polyurethane chemistry ensures superior UV stability, preventing premature degradation, chalking, or color fading over time.",
+  family: "Polyurethane Systems",
+
+  benefits: [
+    "Excellent gloss and color retention under UV exposure",
+    "High-performance aliphatic polyurethane technology for exterior durability",
+    "Superior resistance to weathering, chalking, and fading",
+    "Good abrasion resistance for industrial environments",
+    "Strong chemical resistance to common industrial agents",
+    "High-solids formulation for durable and protective film build",
+    "Provides a smooth, high-quality aesthetic finish",
+    "Ideal as a topcoat in multi-layer protective coating systems",
+  ],
+
+  brand: "Cosmos Coatings",
+
+  industries: [
+    "Oil & Gas",
+    "Marine & Offshore",
+    "Infrastructure & Bridges",
+    "Petrochemical Plants",
+    "Mining",
+    "Industrial Facilities",
+    "Concrete & Steel Structures",
+  ],
+
+  technology:
+    "Two-component Acrylic Aliphatic Polyurethane Technology, engineered to provide superior UV resistance, long-term gloss retention, and a durable protective barrier against environmental exposure, abrasion, and chemical attack.",
+
+  technicalsheet:"/src/assets/products sheets/poli/technical.pdf",
+  applicationsheet:"/src/assets/products sheets/poli/application.pdf",
+  safetysheet:"/src/assets/products sheets/poli/safety.pdf"
+};
+---
+
+<Layout>
+  <Navbar />
+  <Product product={product} />
+  <Footer />
+</Layout>

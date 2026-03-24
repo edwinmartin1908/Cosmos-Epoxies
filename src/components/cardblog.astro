@@ -1,0 +1,73 @@
+---
+const { post } = Astro.props;
+---
+
+<a
+  href={`/${post.slug}`}
+  class="block group cursor-pointer"
+>
+  <article class="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300">
+
+    <!-- IMAGE -->
+    <div class="relative overflow-hidden">
+      <img
+        src={post.data.image || "/images/article1.jpg"}
+        class="w-full h-[220px] object-cover transition duration-500 group-hover:scale-105"
+      />
+
+      <!-- overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent"></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="p-5 flex flex-col">
+
+      <!-- TAGS -->
+      <div class="flex flex-wrap gap-2 mb-3">
+        {
+          post.data.tags?.slice(0, 2).map((tag) => (
+            <span
+              key={tag}
+              class="text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full 
+                     bg-[#1f2c4c]/5 text-[#1f2c4c] border border-[#1f2c4c]/10
+                     group-hover:bg-[#E77B00]/10 group-hover:text-[#E77B00] group-hover:border-[#E77B00]/20
+                     transition"
+            >
+              {tag}
+            </span>
+          ))
+        }
+
+        {
+          post.data.tags?.length > 2 && (
+            <span class="text-[10px] text-[#375668] font-medium">
+              +{post.data.tags.length - 2}
+            </span>
+          )
+        }
+      </div>
+
+      <!-- TITLE -->
+      <h3
+        class="text-[20px] font-semibold text-[#1f2c4c] leading-snug mb-2 
+               transition group-hover:text-[#E77B00]"
+      >
+        {post.data.title}
+      </h3>
+
+      <!-- DESCRIPTION -->
+      <p class="text-[#375668] text-[14px] leading-relaxed mb-4">
+        {post.data.description}
+      </p>
+
+      <!-- CTA -->
+      <div
+        class="flex items-center justify-between text-sm font-semibold text-[#1f2c4c] pt-3 border-t border-gray-100 group-hover:text-[#E77B00] transition"
+      >
+        <span>Read Article</span>
+        <span class="group-hover:translate-x-1 transition">→</span>
+      </div>
+
+    </div>
+  </article>
+</a>

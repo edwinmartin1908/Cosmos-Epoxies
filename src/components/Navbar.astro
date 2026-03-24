@@ -1,0 +1,95 @@
+---
+import cosmoslogo from "../assets/cosmoslogo.png";
+---
+
+<header class="relative bg-white border-b border-gray-200 z-50">
+  <div class="max-w-[1400px] mx-auto flex items-center justify-between py-4 px-5">
+    <!-- LOGO -->
+    <a href="/">
+      <img class="w-[110px]" src={cosmoslogo.src} alt="Cosmos logo" />
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <ul class="hidden md:flex items-center gap-10">
+      <li><a href="/" class="text-gray-900 text-[14px] font-medium hover:text-[#C85F00] transition">Home</a></li>
+      <li><a href="/blog" class="text-gray-900 text-[14px] font-medium hover:text-[#C85F00] transition">COSMOS Learn Hub</a></li>
+      <li><a href="/products" class="text-gray-900 text-[14px] font-medium hover:text-[#C85F00] transition">Products</a></li>
+      <li class="relative group">
+        <button class="flex items-center gap-1 text-gray-900 text-[14px] font-medium hover:text-[#C85F00] transition">
+          Industries
+          <svg class="w-4 h-4 mt-[2px] transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="absolute left-0 top-full mt-4 w-64 bg-white border border-gray-200 rounded-lg shadow-xl
+                    opacity-0 translate-y-2 invisible
+                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible
+                    transition-all duration-300">
+          <div class="py-2">
+            <a href="mining.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#C85F00] transition">Mining</a>
+            <a href="oil.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#C85F00] transition">Oil & Gas</a>
+            <a href="metalconstruction.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#C85F00] transition">Metal Construction</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- HAMBURGER ICON -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 relative cursor-pointer">
+      <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300"></span>
+      <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300"></span>
+      <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- MOBILE FULLSCREEN MENU -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black/70 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 overflow-y-auto">
+    <!-- Contenido centrado -->
+    <div class="relative z-50 flex flex-col justify-center items-center h-full gap-8 px-8 bg-white rounded-lg shadow-xl mx-4 my-12">
+      <a href="/" class="text-gray-900 text-2xl font-bold hover:text-[#C85F00] transition">Home</a>
+      <a href="/blog" class="text-gray-900 text-2xl font-bold hover:text-[#C85F00] transition">COSMOS Learn Hub</a>
+      <a href="/products" class="text-gray-900 text-2xl font-bold hover:text-[#C85F00] transition">Products</a>
+
+      <!-- INDUSTRIES MOBILE (ACCORDION) -->
+      <div class="w-full flex flex-col items-center">
+        <button id="mobile-industries-btn" class="flex items-center gap-2 text-gray-900 text-2xl font-bold hover:text-[#C85F00] transition">
+          Industries
+          <svg id="mobile-industries-arrow" class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <div id="mobile-industries-menu" class="hidden flex flex-col gap-4 mt-4 ml-4 text-lg items-start">
+          <a href="mining.html" class="hover:text-[#C85F00]">Mining</a>
+          <a href="oil.html" class="hover:text-[#C85F00]">Oil & Gas</a>
+          <a href="metalconstruction.html" class="hover:text-[#C85F00]">Metal Construction</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("-translate-x-full");
+    menuBtn.classList.toggle("open");
+  });
+
+  const industriesBtn = document.getElementById("mobile-industries-btn");
+  const industriesMenu = document.getElementById("mobile-industries-menu");
+  const industriesArrow = document.getElementById("mobile-industries-arrow");
+
+  industriesBtn.addEventListener("click", () => {
+    industriesMenu.classList.toggle("hidden");
+    industriesArrow.classList.toggle("rotate-180");
+  });
+</script>
+
+<style>
+  #menu-btn.open span:nth-child(1) { transform: rotate(45deg) translateY(6px); }
+  #menu-btn.open span:nth-child(2) { opacity: 0; }
+  #menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translateY(-6px); }
+</style>

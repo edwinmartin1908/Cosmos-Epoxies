@@ -1,0 +1,40 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import IndustryLayout from "../layouts/Industry.astro";
+
+const data = {
+  heroTitle: "Metal Construction",
+  heroSubtitle: "Durable Epoxy Solutions for Civil Projects",
+  heroText: "Protect bridges, tunnels, and industrial structures with high-performance epoxy coatings. Resist chemical attack, abrasion, and extreme weather conditions.",
+  heroImage: "src/assets/herometal.png",
+  cta: { text: "Explore Products", link: "/products" },
+
+  benefitsTitle: "How Cosmos Coatings Add Value",
+  benefitsSubtitle: "Our formulations extend the lifespan of infrastructure projects and reduce costly maintenance.",
+  benefits: [
+    { icon: "🏗️", title: "Structural Protection", text: "Shield concrete, steel, and composite surfaces from corrosion and wear.", example: "Bridge decks last 2x longer with protective coatings." },
+    { icon: "🛠️", title: "Reduced Maintenance", text: "Minimize downtime and repairs with coatings engineered for heavy traffic and environmental stress.", example: "Maintenance cycles reduced by 35%." },
+    { icon: "⏱️", title: "Extended Lifespan", text: "Ensure reliable, long-lasting performance in critical civil infrastructure.", example: "Tunnels and walkways remain corrosion-free for decades." }
+  ],
+
+  applicationsTitle: "Advanced Applications",
+  applicationsSubtitle: "Where Cosmos coatings deliver real impact for infrastructure:",
+  applications: [
+    { title: "Where We Apply", items: ["Bridge decks & railings", "Concrete tunnels & support beams", "Industrial flooring", "Water treatment tanks"] },
+    { title: "Benefits to Your Operation", items: ["Extended structure lifespan → lower CAPEX", "Reduced maintenance → lower operational cost", "Improved safety → safer for workers", "Predictable maintenance → better planning & ROI"] }
+  ],
+
+  gallery: [
+    "/src/assets/industrygallery/metal1.png",
+    "/src/assets/industrygallery/metal2.png",
+    "/src/assets/industrygallery/metal3.png"
+  ]
+};
+---
+<Layout>
+<Navbar/>
+<IndustryLayout data={data} />
+<Footer/>
+</Layout>

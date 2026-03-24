@@ -1,0 +1,72 @@
+---
+
+---
+<section class="w-full bg-gradient-to-br from-[#cc6d00] to-[#e77b00] py-24 md:py-32 relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center md:gap-24 relative z-10">
+
+    <!-- LEFT CONTENT -->
+    <div class="flex flex-col w-full md:w-1/2 gap-6 md:gap-8 text-center md:text-left">
+      
+      <!-- Badge -->
+      <span class="text-white/80 text-sm font-medium tracking-wider uppercase">
+        Industrial-grade coatings
+      </span>
+
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.05] tracking-[-0.02em] font-bold text-white">
+        High-performance
+        <br />
+        epoxy coatings
+      </h1>
+
+      <!-- Description -->
+      <p class="text-base sm:text-lg md:text-[20px] text-white/90 leading-relaxed max-w-full md:max-w-[520px]">
+        Engineered for extreme environments. Built to eliminate failure where it matters most.
+      </p>
+
+      <!-- CTA -->
+      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-4">
+        <a href="/products" 
+          class="px-7 py-3 bg-white text-[#cc6d00] font-semibold rounded-md 
+          shadow-lg shadow-black/10 
+          hover:shadow-xl hover:scale-[1.03] transition-all duration-300">
+          Explore Products
+        </a>
+
+        <a href="/blog" 
+          class="px-7 py-3 border border-white/70 text-white rounded-md 
+          hover:bg-white hover:text-[#cc6d00] transition-all duration-300">
+          Learn Hub
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="w-full md:w-1/2 flex justify-end mt-12 md:mt-0 relative group">
+
+      <!-- Soft gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-l from-[#cc6d00]/80 via-transparent to-transparent z-0 pointer-events-none"></div>
+
+      <!-- Image -->
+      <img
+        src="/src/assets/hero3.png"
+        alt="epoxy coating industrial application"
+        class="w-auto max-w-[700px] md:max-w-[850px] drop-shadow-[0_40px_60px_rgba(0,0,0,0.5)] 
+               rounded-xl object-cover z-10 transition-all duration-700 ease-out 
+               group-hover:translate-y-[-10px] group-hover:scale-[1.03]"
+        style="clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%); max-height:700px; filter: brightness(1.05); animation: float 6s ease-in-out infinite;"
+      />
+    </div>
+  </div>
+
+  <!-- Soft light effect -->
+  <div class="absolute bottom-0 right-0 w-[45%] h-[70%] bg-[#ff9a40]/20 rounded-full blur-3xl pointer-events-none"></div>
+</section>
+
+<!-- Floating animation -->
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+</style>

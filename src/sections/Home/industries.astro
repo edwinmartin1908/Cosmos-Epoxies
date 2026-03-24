@@ -1,0 +1,50 @@
+---
+import HomeIndustriesCards from "../../components/home_industries_cards.astro";
+---
+
+<section class="relative bg-[#F9FAFB] py-32 overflow-hidden">
+
+  <!-- subtle technical grid -->
+  <div
+    class="absolute inset-0 opacity-[0.025] 
+           bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] 
+           bg-[size:48px_48px]"
+  ></div>
+
+  <div class="relative max-w-[1200px] mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="text-center max-w-[800px] mx-auto mb-24">
+
+      <!-- LABEL -->
+      <div class="text-xs tracking-[0.25em] uppercase text-gray-400 mb-6">
+        Industrial Applications
+      </div>
+
+      <!-- TITLE -->
+      <h2 class="text-[42px] md:text-[48px] font-semibold text-[#111827] leading-tight">
+        Protection in Critical Environments
+      </h2>
+
+      <!-- SUBTITLE -->
+      <p class="mt-6 text-[18px] text-gray-600 leading-relaxed">
+        Our coating systems are deployed in industries where material failure leads to 
+        operational disruption, safety risks, and significant economic loss.
+      </p>
+
+      <!-- EMPHASIS LINE -->
+      <p class="mt-4 text-[18px] text-gray-600 leading-relaxed">
+        Designed for <span class="text-[#111827] font-medium">corrosion control</span>, 
+        <span class="text-[#111827] font-medium">chemical resistance</span>, and 
+        <span class="text-[#111827] font-medium">long-term asset integrity</span>.
+      </p>
+
+    </div>
+
+    <!-- INDUSTRY CARDS -->
+    <div class="mt-10">
+      <HomeIndustriesCards />
+    </div>
+
+  </div>
+</section>

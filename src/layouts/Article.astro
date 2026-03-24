@@ -1,0 +1,227 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta name="generator" content={Astro.generator} />
+  <title>Cosmos Engineering Article</title>
+</head>
+
+<body class="bg-[#F4F6F8]">
+
+  <!-- WRAPPER -->
+  <div class="min-h-screen mb-24">
+
+    <!-- ARTICLE CONTAINER -->
+    <main class="max-w-[1200px] mx-auto px-6">
+
+      <!-- HEADER (🔥 NIVEL PRO) -->
+      <header class="max-w-[860px] mx-auto pt-20 pb-12 px-[24px]">
+
+        <div class="text-sm uppercase tracking-widest text-[#E77B00] font-semibold mb-4">
+          Engineering Insight
+        </div>
+
+        <h1 class="text-[48px] leading-[1.1] font-semibold text-[#0F172A] mb-6">
+          <slot name="title" />
+        </h1>
+
+        <p class="text-[20px] text-gray-600 leading-relaxed">
+          <slot name="description" />
+        </p>
+
+        <!-- META -->
+        <div class="flex items-center gap-6 mt-8 text-sm text-gray-500">
+          <span>Cosmos Coatings</span>
+          <span>-</span>
+          <span>Technical Article</span>
+        </div>
+
+      </header>
+
+      <!-- ARTICLE BODY -->
+      <article class="pro-article">
+        <slot />
+      </article>
+
+    </main>
+
+  </div>
+
+</body>
+
+<style>
+
+/* ========================= */
+/* ARTICLE CORE */
+/* ========================= */
+
+.pro-article {
+  max-width: 860px;
+  padding: 0 24px;
+  margin: 0 auto auto;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
+
+.pro-article h1 {
+  display: none; /* 🔥 ya usamos el header arriba */
+}
+
+.pro-article h2 {
+  font-size: 1.9rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-weight: 600;
+  position: relative;
+}
+
+.pro-article h2::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #E77B00;
+  margin-bottom: 10px;
+}
+
+.pro-article h3 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+.pro-article p {
+  margin-bottom: 1.4rem;
+  color: #334155;
+}
+
+/* ========================= */
+/* LISTS */
+/* ========================= */
+
+.pro-article ul,
+.pro-article ol {
+  margin: 1.5rem 0 2rem 1.5rem;
+}
+
+.pro-article li {
+  margin-bottom: 0.6rem;
+}
+
+.pro-article ul li::marker {
+  color: #E77B00;
+}
+
+/* ========================= */
+/* BLOCKQUOTE */
+/* ========================= */
+
+.pro-article blockquote {
+  border-left: 4px solid #E77B00;
+  background: linear-gradient(to right, #fff7ed, #ffffff);
+  padding: 1.3rem 1.5rem;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+}
+
+/* ========================= */
+/* TABLES */
+/* ========================= */
+
+.pro-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.95rem;
+}
+
+.pro-article th,
+.pro-article td {
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem;
+}
+
+.pro-article th {
+  background-color: #0f172a;
+  color: #fff;
+}
+
+/* ========================= */
+/* CODE */
+/* ========================= */
+
+.pro-article pre {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  padding: 1.3rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.pro-article code {
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+.pro-article a {
+  color: #E77B00;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231,123,0,0.3);
+}
+
+.pro-article a:hover {
+  border-bottom-color: #E77B00;
+}
+
+/* ========================= */
+/* IMAGES */
+/* ========================= */
+
+.pro-article img {
+  max-width: 100%;
+  margin: 2.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+
+.pro-article hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 3rem 0;
+}
+
+</style>

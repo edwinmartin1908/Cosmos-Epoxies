@@ -1,0 +1,52 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Product from "../layouts/product.astro";
+
+const product = {
+  name: "COSMO-EPOXY M-81™",
+  subtitle: "High-Solids Multipurpose Epoxy Polyamide Anti-Corrosive System",
+  image: "src/assets/products/m81.png",
+  description:"COSMO-EPOXY M-81™ is a high-solids epoxy polyamide coating designed as a multipurpose anti-corrosive system for industrial and marine environments. Formulated with zinc phosphate (ZP) pigment, water-repellent components, and impact-resistant pigments, it delivers outstanding protection against severe corrosive conditions. This coating combines excellent adhesion, toughness, and flexibility, allowing it to perform reliably under mechanical stress and aggressive chemical exposure, including acids, alkalis, solvents, and fresh water. Its advanced formulation enables use as both a primer and a topcoat, simplifying coating systems while maintaining high performance. Free from lead and chrome-based pigments, it meets modern environmental and safety requirements.",
+  family: "Epoxy Systems",
+  
+  benefits: [
+    "Multipurpose coating: functions as primer, intermediate, or topcoat",
+    "High-solids formulation for increased film build and reduced VOC impact",
+    "Advanced corrosion protection through zinc phosphate technology",
+    "Excellent adhesion to properly prepared substrates",
+    "Balanced toughness and flexibility to withstand mechanical stress",
+    "Water-repellent properties for enhanced moisture resistance",
+    "High impact resistance for demanding industrial applications",
+    "Outstanding resistance to chemicals including acids, alkalis, solvents, and water",
+    "Free from lead and chrome-based pigments",
+    "Reduces system complexity, application time, and overall project cost",
+  ],
+
+  brand: "Cosmos Coatings",
+
+  industries: [
+    "Oil & Gas",
+    "Mining",
+    "Marine & Offshore",
+    "Water Treatment & Storage",
+    "Infrastructure & Steel Construction",
+    "Petrochemical Plants",
+    "Heavy Industrial Maintenance",
+  ],
+
+  technology:
+    "High-solids Epoxy Polyamide Technology reinforced with Zinc Phosphate (ZP) pigment, incorporating water-repellent and impact-resistant additives to provide a dual protection mechanism: barrier performance and active corrosion inhibition, with the versatility to function across multiple coating layers within a single system.",
+  
+  technicalsheet:"/src/assets/products sheets/m81/technical.pdf",
+  applicationsheet:"/src/assets/products sheets/m81/application.pdf",
+  safetysheet:"/src/assets/products sheets/m81/safety.pdf"
+};
+---
+
+<Layout>
+  <Navbar />
+  <Product product={product} />
+  <Footer />
+</Layout>

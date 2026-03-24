@@ -1,0 +1,225 @@
+---
+
+---
+
+<!-- ========================= -->
+<!-- 🔥 CONCEPT CLOUD PRO -->
+<!-- ========================= -->
+
+<section class="relative w-full py-36 bg-[#0F1C2E] text-white overflow-hidden">
+
+  <!-- 🔲 GRID TÉCNICO DE FONDO -->
+  <div class="absolute inset-0 opacity-[0.04] 
+    bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] 
+    bg-[size:60px_60px]">
+  </div>
+
+  <!-- 🔵 GLOW SUTIL -->
+  <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#E77B00]/10 blur-[160px]"></div>
+
+  <div class="relative max-w-[1200px] mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="max-w-2xl mb-20">
+
+      <span class="text-sm tracking-widest uppercase text-[#E77B00] font-semibold">
+        Knowledge System
+      </span>
+
+      <h2 class="text-[44px] font-semibold mt-4 leading-tight">
+        The science behind
+        <span class="text-[#E77B00]">high-performance coatings</span>
+      </h2>
+
+      <p class="text-gray-400 mt-6 text-[20px] leading-relaxed">
+        Explore the core physical and chemical principles that define coating
+        performance, durability, and long-term reliability.
+      </p>
+
+    </div>
+
+    <!-- CLOUD -->
+    <div id="concept-cloud" class="relative h-[300px] w-full"></div>
+
+  </div>
+
+</section>
+
+<style>
+/* 🔥 CHIP BASE */
+.concept-chip{
+  position:absolute;
+  padding:10px 16px;
+  border-radius:9999px;
+
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.02em;
+
+  color:#E5E7EB;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(6px);
+
+  transition:all 0.25s ease;
+  cursor:pointer;
+}
+
+/* 🔥 HOVER PREMIUM */
+.concept-chip:hover{
+  color:white;
+  border-color:#E77B00;
+  background:rgba(231,123,0,0.12);
+
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 30px rgba(231,123,0,0.15);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+const concepts=[
+{name:"Viscosity",slug:"viscosity"},
+{name:"Hardness",slug:"hardness"},
+{name:"Adhesion",slug:"adhesion"},
+{name:"Rheology",slug:"rheology"},
+{name:"Crosslinking",slug:"crosslinking"},
+{name:"Curing",slug:"curing"},
+{name:"Corrosion",slug:"corrosion"},
+{name:"Surface Tension",slug:"surface-tension"},
+{name:"Pigment Volume Concentration",slug:"pvc"},
+{name:"Solvent Evaporation",slug:"solvent-evaporation"},
+{name:"Film Formation",slug:"film-formation"}
+]
+
+const cloud=document.getElementById("concept-cloud")
+const chips=[]
+const padding=30
+
+concepts.forEach(concept=>{
+
+const chip=document.createElement("div")
+
+chip.innerText=concept.name
+chip.className="concept-chip"
+
+chip.addEventListener("click", () => {
+  window.location.href = `/blog?term=${concept.slug}#dictionary`;
+});
+
+cloud.appendChild(chip)
+
+chips.push({
+el:chip,
+x:Math.random()*600+100,
+y:Math.random()*180+40,
+vx:(Math.random()-0.5)*0.4,
+vy:(Math.random()-0.5)*0.4,
+width:0,
+height:0
+})
+
+})
+
+chips.forEach(chip=>{
+chip.width=chip.el.offsetWidth
+chip.height=chip.el.offsetHeight
+})
+
+let mouseX=0
+let mouseY=0
+
+document.addEventListener("mousemove",e=>{
+mouseX=e.clientX
+mouseY=e.clientY
+})
+
+function resolveCollisions() {
+  for (let i = 0; i < chips.length; i++) {
+    for (let j = i + 1; j < chips.length; j++) {
+
+      const a = chips[i]
+      const b = chips[j]
+
+      const dx = a.x - b.x
+      const dy = a.y - b.y
+
+      const overlapX = (a.width + b.width) / 2 - Math.abs(dx)
+      const overlapY = (a.height + b.height) / 2 - Math.abs(dy)
+
+      if (overlapX > 0 && overlapY > 0) {
+
+        if (overlapX < overlapY) {
+          const shift = overlapX / 2
+          a.x += dx > 0 ? shift : -shift
+          b.x -= dx > 0 ? shift : -shift
+
+          a.vx *= -1
+          b.vx *= -1
+        } else {
+          const shift = overlapY / 2
+          a.y += dy > 0 ? shift : -shift
+          b.y -= dy > 0 ? shift : -shift
+
+          a.vy *= -1
+          b.vy *= -1
+        }
+      }
+    }
+  }
+}
+
+function animate(){
+
+chips.forEach(chip=>{
+
+chip.x+=chip.vx
+chip.y+=chip.vy
+
+if(chip.x<padding){
+chip.x=padding
+chip.vx*=-1
+}
+
+if(chip.x>cloud.offsetWidth-chip.width-padding){
+chip.x=cloud.offsetWidth-chip.width-padding
+chip.vx*=-1
+}
+
+if(chip.y<padding){
+chip.y=padding
+chip.vy*=-1
+}
+
+if(chip.y>cloud.offsetHeight-chip.height-padding){
+chip.y=cloud.offsetHeight-chip.height-padding
+chip.vy*=-1
+}
+
+})
+
+resolveCollisions()
+
+chips.forEach(chip=>{
+const rect=chip.el.getBoundingClientRect()
+const dx=rect.left-mouseX
+const dy=rect.top-mouseY
+const dist=Math.sqrt(dx*dx+dy*dy)
+
+if(dist<160){
+chip.x+=dx*0.015
+chip.y+=dy*0.015
+}
+
+chip.el.style.transform=`translate(${chip.x}px,${chip.y}px)`
+})
+
+requestAnimationFrame(animate)
+}
+
+animate()
+
+})
+</script>

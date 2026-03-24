@@ -1,0 +1,182 @@
+---
+
+---
+
+<div class="relative">
+  <div class="overflow-hidden w-full">
+    <div id="slider" class="flex gap-10 transition-transform duration-500">
+
+      <!-- CARD 1 -->
+      <a href="mining.html" class="group min-w-[calc(100%-2.5rem)] bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer transition hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+
+        <div class="relative overflow-hidden">
+          <img src="src/assets/heromining.png"
+            class="w-full h-[280px] object-cover transition duration-700 group-hover:scale-105" />
+
+          <!-- overlay técnico -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent"></div>
+
+          <!-- etiqueta -->
+          <div class="absolute top-5 left-5 text-[11px] tracking-widest uppercase text-white/80">
+            Industry
+          </div>
+        </div>
+
+        <div class="p-8">
+          <!-- línea técnica -->
+          <div class="w-10 h-[2px] bg-[#E77B00] mb-4"></div>
+
+          <h3 class="text-2xl font-semibold text-[#111827] mb-3 group-hover:text-[#E77B00] transition">
+            Mining
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed text-[15px]">
+            High-performance epoxy coatings engineered to protect pipelines,
+            tanks, and processing equipment under extreme chemical exposure.
+          </p>
+        </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="oil.html" class="group min-w-[calc(100%-2.5rem)] bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer transition hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+
+        <div class="relative overflow-hidden">
+          <img src="src/assets/herooil.png"
+            class="w-full h-[280px] object-cover transition duration-700 group-hover:scale-105" />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent"></div>
+
+          <div class="absolute top-5 left-5 text-[11px] tracking-widest uppercase text-white/80">
+            Industry
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="w-10 h-[2px] bg-[#E77B00] mb-4"></div>
+
+          <h3 class="text-2xl font-semibold text-[#111827] mb-3 group-hover:text-[#E77B00] transition">
+            Oil & Gas
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed text-[15px]">
+            Corrosion-resistant epoxy systems designed for offshore platforms
+            and aggressive industrial environments.
+          </p>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="infrastructure.html" class="group min-w-[calc(100%-2.5rem)] bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer transition hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+
+        <div class="relative overflow-hidden">
+          <img src="src/assets/herometal.png"
+            class="w-full h-[280px] object-cover transition duration-700 group-hover:scale-105" />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent"></div>
+
+          <div class="absolute top-5 left-5 text-[11px] tracking-widest uppercase text-white/80">
+            Industry
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="w-10 h-[2px] bg-[#E77B00] mb-4"></div>
+
+          <h3 class="text-2xl font-semibold text-[#111827] mb-3 group-hover:text-[#E77B00] transition">
+            Metal Construction
+          </h3>
+
+          <p class="text-gray-600 leading-relaxed text-[15px]">
+            Protective coating systems for bridges, plants, and large-scale
+            infrastructure exposed to harsh conditions.
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <button
+    id="prev"
+    class="absolute left-[-35px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-[#E77B00] hover:text-white transition"
+  >
+    ←
+  </button>
+
+  <button
+    id="next"
+    class="absolute right-[-35px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-[#E77B00] hover:text-white transition"
+  >
+    →
+  </button>
+
+  <!-- DOTS -->
+  <div id="dots" class="flex justify-center items-center gap-3 mt-12"></div>
+</div>
+
+<script>
+  const slider = document.getElementById("slider");
+  const slides = slider.children;
+  const totalSlides = slides.length;
+
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+  const dotsContainer = document.getElementById("dots");
+
+  let index = 0;
+
+  function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + 40; // gap-10
+    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+    updateDots();
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  });
+
+  function createDots() {
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("button");
+
+      dot.className =
+        "w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300 cursor-pointer";
+
+      dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+      });
+
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.children;
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("bg-[#E77B00]", "scale-125");
+
+      if (i === index) {
+        dots[i].classList.add("bg-[#E77B00]", "scale-125");
+      }
+    }
+  }
+
+  createDots();
+  updateSlider();
+
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  }, 6000);
+
+  window.addEventListener("resize", updateSlider);
+</script>

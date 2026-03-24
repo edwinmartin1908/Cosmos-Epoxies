@@ -1,0 +1,41 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import IndustryLayout from "../layouts/Industry.astro";
+
+const data = {
+  heroTitle: "Oil & Gas",
+  heroSubtitle: "High-Performance Epoxy for Harsh Environments",
+  heroText: "Protect pipelines, tanks, and offshore platforms from corrosion, chemical exposure, and abrasion with our industry-tailored epoxy coatings.",
+  heroImage: "src/assets/herooil.png",
+  cta: { text: "Explore Products", link: "/products" },
+
+  benefitsTitle: "Why Choose Cosmos Coatings",
+  benefitsSubtitle: "Designed to withstand aggressive chemicals, high pressures, and extreme temperatures common in oil and gas operations.",
+  benefits: [
+    { icon: "🛢️", title: "Corrosion & Chemical Resistance", text: "Protect metal surfaces from acid, alkali, and saltwater attack.", example: "Offshore platform components remain corrosion-free for years." },
+    { icon: "🛠️", title: "Reduced Downtime", text: "Minimize pipeline and tank maintenance cycles with durable coatings.", example: "Maintenance intervals extended by 50% in refineries." },
+    { icon: "⏱️", title: "Reliable Performance", text: "Keep critical infrastructure running safely under extreme conditions.", example: "Continuous operation achieved during peak production." }
+  ],
+
+  applicationsTitle: "Advanced Applications",
+  applicationsSubtitle: "Specific areas where our coatings make a difference in oil & gas:",
+  applications: [
+    { title: "Where We Apply", items: ["Storage tanks & pressure vessels", "Pipelines transporting crude or chemicals", "Offshore rigs & platforms", "Pump housings and industrial flooring"] },
+    { title: "Benefits to Your Operation", items: ["Extended asset life → lower replacement costs", "Reduced chemical damage → safer operations", "Fewer unplanned shutdowns → higher productivity", "Predictable maintenance → better planning & ROI"] }
+  ],
+
+  gallery: [
+    "/src/assets/industrygallery/oil1.png",
+    "/src/assets/industrygallery/oil2.png",
+    "/src/assets/industrygallery/oil3.png"
+  ]
+};
+---
+
+<Layout>
+    <Navbar/>
+    <IndustryLayout data={data} />
+    <Footer/>
+</Layout>
