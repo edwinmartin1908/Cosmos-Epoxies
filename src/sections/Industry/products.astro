@@ -1,4 +1,7 @@
 ---
+
+import image1 from "../../assets/products/b81ind.png"
+import image2 from "../../assets/products/primind.png"
 ---
 <section class="relative bg-gray-50 py-24">
 
@@ -19,7 +22,7 @@
 
       <!-- IMAGE -->
       <div class="group overflow-hidden rounded-2xl object-cover">
-        <img src="src/assets/products/b81ind.png"
+        <img src={image1.src}
           class="w-full h-[320px] md:h-[380px] object-cover transition duration-500 group-hover:scale-105">
       </div>
 
@@ -55,7 +58,7 @@
 
       <!-- IMAGE -->
       <div class="group overflow-hidden rounded-2xl md:order-2">
-        <img src="src/assets/products/primind.png"
+        <img src={image2.src}
           class="w-full h-[320px] md:h-[380px] object-cover transition duration-500 group-hover:scale-105">
       </div>
 
