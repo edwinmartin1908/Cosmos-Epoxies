@@ -3,7 +3,7 @@ title: "How Small Amounts of Additives Create Big Performance Changes"
 category: formulation
 subcategory: additives
 description: "Discover how even tiny amounts of additives in epoxy coatings can dramatically influence application, appearance, durability, and overall performance"
-image: "/blogimages/additives/additives1.png"
+image: "/Cosmos-Coatings/blogimages/additives/additives2.png"
 tags: ["Additives"]
 ---
 
