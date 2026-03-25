@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Product from "../layouts/product.astro";
 import image from "../assets/products/m81.png"
+import tec from "../assets/products sheets/m81/technical.pdf"
+import application from "../assets/products sheets/m81/appplication.pdf"
+import safety from "../assets/products sheets/m81/safety.pdf"
 
 const product = {
   name: "COSMO-EPOXY M-81™",
@@ -40,9 +43,9 @@ const product = {
   technology:
     "High-solids Epoxy Polyamide Technology reinforced with Zinc Phosphate (ZP) pigment, incorporating water-repellent and impact-resistant additives to provide a dual protection mechanism: barrier performance and active corrosion inhibition, with the versatility to function across multiple coating layers within a single system.",
   
-  technicalsheet:"/src/assets/products sheets/m81/technical.pdf",
-  applicationsheet:"/src/assets/products sheets/m81/application.pdf",
-  safetysheet:"/src/assets/products sheets/m81/safety.pdf"
+  technicalsheet: tec.src,
+  applicationsheet:application.src,
+  safetysheet:safety.src
 };
 ---
 

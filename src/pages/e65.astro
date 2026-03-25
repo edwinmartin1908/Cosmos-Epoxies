@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Product from "../layouts/product.astro";
 import image from "../assets/products/e65.png"
+import tec from "../assets/products sheets/e65/technical.pdf"
+import application from "../assets/products sheets/e65/appplication.pdf"
+import safety from "../assets/products sheets/e65/safety.pdf"
 
 const product = {
   name: "COSMO-EPOXY E-65™",
@@ -36,9 +39,9 @@ const product = {
   ],
 
   technology: "Two-component Epoxy Polyamide Technology with corrosion-inhibitive pigments, engineered to provide a dense, chemically resistant protective film that acts as a barrier against aggressive environments, chemical attack, and mechanical wear.",
-  technicalsheet:"/src/assets/products sheets/e65/technical.pdf",
-  applicationsheet:"/src/assets/products sheets/e65/application.pdf",
-  safetysheet:"/src/assets/products sheets/e65/safety.pdf"
+  technicalsheet: tec.src,
+  applicationsheet:application.src,
+  safetysheet:safety.src
 };
 ---
 <Layout>
