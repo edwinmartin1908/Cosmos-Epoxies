@@ -35,7 +35,7 @@ const shuffled = [...posts].sort(() => Math.random() - 0.5).slice(0, 6);
       {
         shuffled.map((post) => (
           <a
-            href={`/Cosmos-Coatings/${post.slug}`}
+            href={`/${post.slug}`}
             class="group blog-card relative block bg-white border border-gray-200 rounded-2xl p-8 overflow-hidden cursor-pointer transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
           >
 
@@ -79,7 +79,7 @@ const shuffled = [...posts].sort(() => Math.random() - 0.5).slice(0, 6);
     <!-- FOOTER -->
     <div class="text-center mt-[90px]">
       <a
-        href="/Cosmos-Coatings/blog"
+        href="/blog"
         class="inline-flex items-center gap-2 px-8 py-3 border border-[#111827] text-[#111827] rounded-lg font-medium hover:bg-[#111827] hover:text-white transition"
       >
         Explore full knowledge base

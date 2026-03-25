@@ -3,7 +3,7 @@ title: "Difference Between Durability and Service Life in Epoxy Coatings"
 category:  properties
 subcategory: durability
 description: "Understand the difference between durability and service life in epoxy coatings and why confusing these concepts can lead to poor decisions in specification maintenance and long term cost"
-image: "/Cosmos-Coatings/blogimages/durability/durability2.png"
+image: "/blogimages/durability/durability2.png"
 tags: ["Durability"]
 ---
 

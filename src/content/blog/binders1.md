@@ -3,7 +3,7 @@ title: "What Is a Binder in Epoxy Coatings and Why It Matters"
 category:  formulation
 subcategory: binders
 description: "Learn what a binder is in epoxy coatings, how it forms the backbone of the film, and why it is critical for adhesion, durability, and overall performance"
-image: "/Cosmos-Coatings/blogimages/binders/binders1.png"
+image: "/blogimages/binders/binders1.png"
 tags: ["Binders"]
 ---
 

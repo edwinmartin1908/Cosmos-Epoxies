@@ -3,7 +3,7 @@ title: "How Smart Coatings Respond to Environmental Stimuli"
 category:  new-technologies
 subcategory: smart-coatings
 description: "Learn how smart coatings detect and respond to environmental changes, maintaining protection and functionality in demanding industrial applications"
-image: "/Cosmos-Coatings/blogimages/smart/smart2.png"
+image: "/blogimages/smart/smart2.png"
 tags: ["Innovation"]
 ---
 

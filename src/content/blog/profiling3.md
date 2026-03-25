@@ -3,7 +3,7 @@ title: "How Anchor Profile Improves Mechanical Adhesion in Coatings"
 category:  substrate-preparation
 subcategory: profiling
 description: "Understand how anchor profile enhances mechanical adhesion in epoxy coatings and why it is essential for achieving strong and durable coating performance"
-image: "/Cosmos-Coatings/blogimages/profiling/profiling3.png"
+image: "/blogimages/profiling/profiling3.png"
 tags: ["Surface Preparation"]
 ---
 

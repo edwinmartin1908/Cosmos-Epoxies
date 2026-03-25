@@ -3,7 +3,7 @@ title: "What Are Pigments in Coatings and What Role Do They Really Play"
 category:  formulation
 subcategory: pigments
 description: "Understand what pigments are in industrial coatings and how they influence not only color but also protection durability and overall coating performance"
-image: "/Cosmos-Coatings/blogimages/pigments/pigments1.png"
+image: "/blogimages/pigments/pigments1.png"
 tags: ["Pigments"]
 ---
 

@@ -3,7 +3,7 @@ title: " Nano vs Micro Particles in Epoxy Coatings: Size Matters"
 category:  new-technologies
 subcategory: nanocoatings
 description: "Understand why particle size makes a critical difference in epoxy coatings, and how nanoparticles outperform microparticles in adhesion, barrier properties, and durability"
-image: "/Cosmos-Coatings/blogimages/nano/nano3.png"
+image: "/blogimages/nano/nano3.png"
 tags: ["Innovation"]
 ---
 

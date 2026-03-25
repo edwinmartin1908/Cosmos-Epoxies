@@ -3,7 +3,7 @@ title: "Invisible Contaminants That Affect Coating Performance"
 category:  substrate-preparation
 subcategory: surface-cleaning
 description: "Understand how invisible contaminants impact epoxy coating performance and why surfaces that look clean can still lead to adhesion failure and premature degradation"
-image: "/Cosmos-Coatings/blogimages/cleaning/cleaning3.png"
+image: "/blogimages/cleaning/cleaning3.png"
 tags: ["Surface Preparation"]
 ---
 

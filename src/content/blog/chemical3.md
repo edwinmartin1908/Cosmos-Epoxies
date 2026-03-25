@@ -3,7 +3,7 @@ title: "Difference Between Chemical Resistance and Corrosion Resistance"
 category:  properties
 subcategory: chemical-resistance
 description: "Understand the critical difference between chemical resistance and corrosion resistance and why confusing these two concepts can lead to premature coating failure in industrial environments"
-image: "/Cosmos-Coatings/blogimages/chemical/chemical3.png"
+image: "/blogimages/chemical/chemical3.png"
 tags: ["Chemical Resistance"]
 ---
 

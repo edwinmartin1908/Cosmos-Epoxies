@@ -3,7 +3,7 @@ title: "Surface Energy and Its Relationship with Surface Cleaning"
 category:  substrate-preparation
 subcategory: surface-cleaning
 description: "Understand how surface energy is directly affected by surface cleaning and why it determines whether an epoxy coating can properly wet adhere and perform over time"
-image: "/Cosmos-Coatings/blogimages/cleaning/cleaning4.png"
+image: "/blogimages/cleaning/cleaning4.png"
 tags: ["Surface Preparation"]
 ---
 

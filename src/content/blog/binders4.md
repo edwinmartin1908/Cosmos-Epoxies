@@ -3,7 +3,7 @@ title: "How Molecular Structure Affects Durability and Adhesion"
 category:  formulation
 subcategory: binders
 description: "Understand how the molecular structure of epoxy binders influences the durability, adhesion, and long-term performance of industrial coatings"
-image: "/Cosmos-Coatings/blogimages/binders/binders4.png"
+image: "/blogimages/binders/binders4.png"
 tags: ["Binders"]
 ---
 

@@ -3,7 +3,7 @@ title: "The Role of Additives in Coating Formulation Design"
 category: formulation
 subcategory: additives
 description: "Explore how additives shape the design of epoxy coatings, enhancing performance, application, and durability beyond what pigments, binders, and fillers alone can achieve"
-image: "/Cosmos-Coatings/blogimages/additives/additives3.png"
+image: "/blogimages/additives/additives3.png"
 tags: ["Additives"]
 ---
 

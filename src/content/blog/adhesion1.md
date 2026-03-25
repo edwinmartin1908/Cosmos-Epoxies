@@ -3,7 +3,7 @@ title: "What Is Adhesion in Epoxy Coatings? (Mechanical vs. Chemical Bonding Exp
 category: properties
 subcategory: adhesion
 description: "In this article, we break down the two fundamental mechanisms—mechanical and chemical adhesion—and explain how their interaction determines whether a coating truly bonds to a surface or eventually peels away."
-image: "/Cosmos-Coatings/blogimages/adhesion/adhesion1.png"
+image: "/blogimages/adhesion/adhesion1.png"
 tags: ["Adhesion"]
 ---
 

@@ -3,7 +3,7 @@ title: "Key Benefits of Smart Coatings in Industrial Applications"
 category:  new-technologies
 subcategory: smart-coatings
 description: "Explore the main advantages of using smart coatings in industrial settings, from enhanced protection and self-healing to maintenance reduction and longer service life"
-image: "/Cosmos-Coatings/blogimages/smart/smart5.png"
+image: "/blogimages/smart/smart5.png"
 tags: ["Innovation"]
 ---
 

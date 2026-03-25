@@ -3,7 +3,7 @@ title: "What Are Additives in Coatings and Why They Are Critical"
 category: formulation
 subcategory: additives
 description: "Understand what additives are in coatings and why these small components play a critical role in performance application quality and long term durability in epoxy systems"
-image: "/Cosmos-Coatings/blogimages/additives/additives1.png"
+image: "/blogimages/additives/additives1.png"
 tags: ["Additives", "Innovation"]
 ---
 

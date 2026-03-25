@@ -3,7 +3,7 @@ title: "Relationship Between Surface Cleaning and Adhesion in Epoxy Coatings"
 category:  substrate-preparation
 subcategory: surface-cleaning
 description: "Understand how surface cleaning directly impacts adhesion in epoxy coatings and why even small amounts of contamination can lead to coating failure"
-image: "/Cosmos-Coatings/blogimages/cleaning/cleaning2.png"
+image: "/blogimages/cleaning/cleaning2.png"
 tags: ["Surface Preparation"]
 ---
 

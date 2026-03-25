@@ -3,7 +3,7 @@ title: "How Binder Chemistry Defines Coating Performance"
 category:  formulation
 subcategory: binders
 description: "Explore how the chemical structure of epoxy binders influences adhesion, durability, chemical resistance, and overall performance in industrial coatings"
-image: "/Cosmos-Coatings/blogimages/binders/binders2.png"
+image: "/blogimages/binders/binders2.png"
 tags: ["Binders"]
 ---
 

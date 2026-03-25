@@ -3,7 +3,7 @@ title: "What Is Surface Profile and Why It Defines Coating Adhesion"
 category:  substrate-preparation
 subcategory: profiling
 description: "Understand what surface profile is how it is created and why it is one of the most critical factors in achieving strong and durable adhesion in epoxy coating systems"
-image: "/Cosmos-Coatings/blogimages/profiling/profiling1.png"
+image: "/blogimages/profiling/profiling1.png"
 tags: ["Surface Preparation"]
 ---
 

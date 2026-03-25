@@ -3,7 +3,7 @@ title: "Mechanisms by Which Nanoparticles Enhance Durability and Longevity"
 category:  new-technologies
 subcategory: nanocoatings
 description: "Learn how nanoparticles in epoxy coatings improve durability and extend service life through mechanical reinforcement, chemical resistance, and film stabilization"
-image: "/Cosmos-Coatings/blogimages/nano/nano5.png"
+image: "/blogimages/nano/nano5.png"
 tags: ["Innovation"]
 ---
 

@@ -3,7 +3,7 @@ title: "Relationship Between Surface Profile and Coating Thickness"
 category:  substrate-preparation
 subcategory: profiling
 description: "Understand how surface profile and coating thickness are directly related and why balancing both is essential to achieve proper adhesion and long term performance in epoxy coatings"
-image: "/Cosmos-Coatings/blogimages/profiling/profiling4.png"
+image: "/blogimages/profiling/profiling4.png"
 tags: ["Surface Preparation"]
 ---
 

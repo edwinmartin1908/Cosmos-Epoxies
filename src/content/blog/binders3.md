@@ -3,7 +3,7 @@ title: "Types of Epoxy Resins and Their Key Properties"
 category:  formulation
 subcategory: binders
 description: "Learn about the main types of epoxy resins used in industrial coatings and how their chemical structures define adhesion, durability, chemical resistance, and application performance"
-image: "/Cosmos-Coatings/blogimages/binders/binders3.png"
+image: "/blogimages/binders/binders3.png"
 tags: ["Binders"]
 ---
 
