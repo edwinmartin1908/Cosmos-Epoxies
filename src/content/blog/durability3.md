@@ -3,7 +3,7 @@ title: "Factors That Determine the Service Life of a Coating"
 category:  properties
 subcategory: durability
 description: "Understand the key factors that determine how long a coating will last in real conditions and how to control them to maximize performance and reduce long term costs"
-image: "/src/assets/blogimages/durability/durability3.png"
+image: "/Cosmos-Coatings/blogimages/durability/durability3.png"
 tags: ["Durability"]
 ---
 

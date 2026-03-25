@@ -3,7 +3,7 @@ title: "Visual Cleanliness Standards in Surface Preparation"
 category:  substrate-preparation
 subcategory: abrasive-blasting
 description: "Understand what visual cleanliness standards are how they are used in surface preparation and why they are critical to ensure consistent coating performance"
-image: "/src/assets/blogimages/blasting/blasting4.png"
+image: "/Cosmos-Coatings/blogimages/blasting/blasting4.png"
 tags: ["Surface Preparation"]
 ---
 

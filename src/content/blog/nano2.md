@@ -3,7 +3,7 @@ title: "How Nanomaterials Improve Barrier and Chemical Resistance"
 category:  new-technologies
 subcategory: nanocoatings
 description: "Learn how incorporating nanomaterials into epoxy coatings enhances barrier properties and chemical resistance, providing superior protection for industrial surfaces"
-image: "/src/assets/blogimages/nano/nano2.png"
+image: "/Cosmos-Coatings/blogimages/nano/nano2.png"
 tags: ["Innovation"]
 ---
 

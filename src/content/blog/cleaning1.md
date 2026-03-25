@@ -3,7 +3,7 @@ title: "What Is Surface Preparation and Why It Is Critical in Epoxy Coatings"
 category:  substrate-preparation
 subcategory: surface-cleaning
 description: "Understand what surface preparation really means why it is the most critical step before applying an epoxy coating and how it directly determines adhesion durability and long term performance"
-image: "/src/assets/blogimages/cleaning/cleaning1.png"
+image: "/Cosmos-Coatings/blogimages/cleaning/cleaning1.png"
 tags: ["Surface Preparation"]
 ---
 

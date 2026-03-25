@@ -3,7 +3,7 @@ title: "What Is Chemical Resistance in Epoxy Coatings"
 category:  properties
 subcategory: chemical-resistance
 description: "Understand what chemical resistance in epoxy coatings really means, how chemicals interact with the polymer structure, and why this property is critical to ensure long term protection in aggressive industrial environments."
-image: "/src/assets/blogimages/chemical/chemical1.png"
+image: "/Cosmos-Coatings/blogimages/chemical/chemical1.png"
 tags: ["Chemical Resistance"]
 ---
 

@@ -3,7 +3,7 @@ title: "What Are Smart Coatings and How They Differ From Conventional Coatings"
 category:  new-technologies
 subcategory: smart-coatings
 description: "Explore what smart coatings are, how they function, and how they differ from conventional coatings in providing advanced protection and performance in industrial applications"
-image: "/src/assets/blogimages/smart/smart1.png"
+image: "/Cosmos-Coatings/blogimages/smart/smart1.png"
 tags: ["Innovation"]
 ---
 

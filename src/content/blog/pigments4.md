@@ -3,7 +3,7 @@ title: "What Is Critical Pigment Volume Concentration and Why It Matters"
 category:  formulation
 subcategory: pigments
 description: "Understand what critical pigment volume concentration is and why it represents a turning point that defines coating structure performance and durability in epoxy systems"
-image: "/src/assets/blogimages/pigments/pigments4.png"
+image: "/Cosmos-Coatings/blogimages/pigments/pigments4.png"
 tags: ["Pigments"]
 ---
 

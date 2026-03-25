@@ -3,7 +3,7 @@ title: "What Is Durability in Epoxy Coatings"
 category:  properties
 subcategory: durability
 description: "Understand what durability really means in epoxy coatings how it is defined measured and why it is one of the most critical factors for long term industrial protection"
-image: "/src/assets/blogimages/durability/durability1.png"
+image: "/Cosmos-Coatings/blogimages/durability/durability1.png"
 tags: ["Durability"]
 ---
 

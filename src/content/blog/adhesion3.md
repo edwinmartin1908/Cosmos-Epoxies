@@ -3,7 +3,7 @@ title: "Surface energy: why it determines whether a coating “sticks” or not"
 category: properties
 subcategory: adhesion
 description: "Discover how a substrate’s surface energy controls wetting, adhesion, and coating performance—and why ignoring it leads to premature failure."
-image: "/src/assets/blogimages/adhesion/adhesion3.png"
+image: "/Cosmos-Coatings/blogimages/adhesion/adhesion3.png"
 tags: ["Adhesion"]
 ---
 

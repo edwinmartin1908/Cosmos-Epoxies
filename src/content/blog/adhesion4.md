@@ -3,7 +3,7 @@ title: "Contact Angle and Wetting in Industrial Surfaces"
 category: properties
 subcategory: adhesion
 description: "Understand how contact angle and wetting determine whether a coating spreads, adheres, or fails—and why mastering this concept is critical for high-performance industrial coatings."
-image: "/src/assets/blogimages/adhesion/adhesion4.png"
+image: "/Cosmos-Coatings/blogimages/adhesion/adhesion4.png"
 tags: ["Adhesion"]
 ---
 

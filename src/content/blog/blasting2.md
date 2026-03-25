@@ -3,7 +3,7 @@ title: "Types of Abrasives and How to Select Them for Surface Preparation"
 category:  substrate-preparation
 subcategory: abrasive-blasting
 description: "Understand the different types of abrasives used in blasting and how to select the right one based on substrate condition required profile and coating performance"
-image: "/src/assets/blogimages/blasting/blasting2.png"
+image: "/Cosmos-Coatings/blogimages/blasting/blasting2.png"
 tags: ["Surface Preparation"]
 ---
 

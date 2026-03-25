@@ -3,7 +3,7 @@ title: "Difference Between Pigments and Fillers in Epoxy Coatings"
 category:  formulation
 subcategory: pigments
 description: "Understand the difference between pigments and fillers in epoxy coatings and how each one contributes to performance cost and durability"
-image: "/src/assets/blogimages/pigments/pigments2.png"
+image: "/Cosmos-Coatings/blogimages/pigments/pigments2.png"
 tags: ["Pigments"]
 ---
 

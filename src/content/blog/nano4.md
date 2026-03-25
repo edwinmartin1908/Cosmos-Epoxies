@@ -3,7 +3,7 @@ title: "How Nanocoatings Influence Adhesion at the Substrate Interface"
 category:  new-technologies
 subcategory: nanocoatings
 description: "Explore how nanocoatings improve adhesion to substrates by enhancing surface interactions, wetting, and chemical bonding in epoxy coatings"
-image: "/src/assets/blogimages/nano/nano4.png"
+image: "/Cosmos-Coatings/blogimages/nano/nano4.png"
 tags: ["Innovation"]
 ---
 

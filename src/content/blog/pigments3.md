@@ -3,7 +3,7 @@ title: "How Pigment Volume Concentration Affects Coating Performance"
 category:  formulation
 subcategory: pigments
 description: "Understand what pigment volume concentration is and how it directly influences adhesion durability permeability and overall performance in epoxy coatings"
-image: "/src/assets/blogimages/pigments/pigments3.png"
+image: "/Cosmos-Coatings/blogimages/pigments/pigments3.png"
 tags: ["Pigments"]
 ---
 

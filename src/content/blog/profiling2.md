@@ -3,7 +3,7 @@ title: "Difference Between Surface Profile and Surface Roughness"
 category:  substrate-preparation
 subcategory: profiling
 description: "Understand the difference between surface profile and surface roughness and why confusing these terms can lead to poor surface preparation and coating failure"
-image: "/src/assets/blogimages/profiling/profiling2.png"
+image: "/Cosmos-Coatings/blogimages/profiling/profiling2.png"
 tags: ["Surface Preparation"]
 ---
 

@@ -3,7 +3,7 @@ title: "How Smart Coatings Integrate Nanotechnology for Advanced Functionality"
 category:  new-technologies
 subcategory: smart-coatings
 description: "Discover how nanotechnology enhances smart coatings, enabling self-healing, anti-corrosive, and responsive properties in industrial epoxy systems"
-image: "/src/assets/blogimages/smart/smart4.png"
+image: "/Cosmos-Coatings/blogimages/smart/smart4.png"
 tags: ["Innovation"]
 ---
 

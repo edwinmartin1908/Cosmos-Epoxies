@@ -3,7 +3,7 @@ title: "The difference Between Adhesion and Cohesion in Materials"
 category: properties
 subcategory: adhesion
 description: A coating can have the best resin and pigments—but if it doesn’t properly wet the surface, it will fail. Wetting additives ensure uniform coverage, adhesion, and appearance. Without them, defects are only a matter of time.
-image: "/src/assets/blogimages/adhesion/adhesion2.png"
+image: "/Cosmos-Coatings/blogimages/adhesion/adhesion2.png"
 tags: ["Adhesion"]
 ---
 # Difference Between Adhesion and Cohesion in Materials

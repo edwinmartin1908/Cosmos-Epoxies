@@ -3,7 +3,7 @@ title: "Types of Smart Coatings: Self-Healing, Anti-Corrosive, and Responsive Sy
 category:  new-technologies
 subcategory: smart-coatings
 description: "Explore the main types of smart coatings used in industrial applications and how each system provides unique protection, self-repair, or environmental response"
-image: "/src/assets/blogimages/smart/smart3.png"
+image: "/Cosmos-Coatings/blogimages/smart/smart3.png"
 tags: ["Innovation"]
 ---
 

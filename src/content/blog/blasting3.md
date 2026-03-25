@@ -3,7 +3,7 @@ title: "Surface Roughness Profile and Its Impact on Adhesion"
 category:  substrate-preparation
 subcategory: abrasive-blasting
 description: "Understand how surface roughness profile influences adhesion in epoxy coatings and why controlling it is essential for long term coating performance"
-image: "/src/assets/blogimages/blasting/blasting3.png"
+image: "/Cosmos-Coatings/blogimages/blasting/blasting3.png"
 tags: ["Surface Preparation"]
 ---
 

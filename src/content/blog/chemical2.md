@@ -3,7 +3,7 @@ title: "Chemical Degradation Mechanisms in Polymers"
 category:  properties
 subcategory: chemical-resistance
 description: "Understand the fundamental mechanisms by which chemicals degrade polymer systems and how these processes directly impact the performance and lifespan of epoxy coatings in industrial environments."
-image: "/src/assets/blogimages/chemical/chemical2.png"
+image: "/Cosmos-Coatings/blogimages/chemical/chemical2.png"
 tags: ["Chemical Resistance"]
 
 ---

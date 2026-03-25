@@ -3,7 +3,7 @@ title: "How Epoxy Coatings Age Over Time"
 category:  properties
 subcategory: durability
 description: "Understand how epoxy coatings degrade over time what mechanisms drive aging and how these changes impact long term performance in industrial environments"
-image: "/src/assets/blogimages/durability/durability4.png"
+image: "/Cosmos-Coatings/blogimages/durability/durability4.png"
 tags: ["Durability"]
 ---
 

@@ -3,7 +3,7 @@ title: "What Is Blasting and How It Works in Surface Preparation"
 category:  substrate-preparation
 subcategory: abrasive-blasting
 description: "Understand what abrasive blasting is how it works and why it is one of the most effective methods for preparing surfaces before applying epoxy coatings"
-image: "/src/assets/blogimages/blasting/blasting1.png"
+image: "/Cosmos-Coatings/blogimages/blasting/blasting1.png"
 tags: ["Surface Preparation"]
 ---
 

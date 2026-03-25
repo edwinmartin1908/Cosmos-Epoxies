@@ -3,7 +3,7 @@ title: "What Are Nanocoatings and How Do They Differ From Conventional Coatings"
 category:  new-technologies
 subcategory: nanocoatings
 description: "Discover what nanocoatings are, how they enhance industrial epoxy performance, and how they differ from traditional coatings in terms of durability, adhesion, and protection"
-image: "/src/assets/blogimages/nano/nano1.png"
+image: "/Cosmos-Coatings/blogimages/nano/nano1.png"
 tags: ["Innovation"]
 ---
 
