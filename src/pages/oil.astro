@@ -3,12 +3,16 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import IndustryLayout from "../layouts/Industry.astro";
+import oil from "../assets/herooil.png"
+import gallery1 from "../assets/industrygallery/oil1.png"
+import gallery2 from "../assets/industrygallery/oil2.png"
+import gallery3 from "../assets/industrygallery/oil3.png"
 
 const data = {
   heroTitle: "Oil & Gas",
   heroSubtitle: "High-Performance Epoxy for Harsh Environments",
   heroText: "Protect pipelines, tanks, and offshore platforms from corrosion, chemical exposure, and abrasion with our industry-tailored epoxy coatings.",
-  heroImage: "src/assets/herooil.png",
+  heroImage: oil.src,
   cta: { text: "Explore Products", link: "/products" },
 
   benefitsTitle: "Why Choose Cosmos Coatings",
@@ -27,9 +31,9 @@ const data = {
   ],
 
   gallery: [
-    "/src/assets/industrygallery/oil1.png",
-    "/src/assets/industrygallery/oil2.png",
-    "/src/assets/industrygallery/oil3.png"
+    gallery1.src,
+    gallery2.src,
+    gallery3.src
   ]
 };
 ---

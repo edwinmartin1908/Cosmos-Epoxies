@@ -3,12 +3,16 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import IndustryLayout from "../layouts/Industry.astro";
+import mining from "../assets/heromining.png"
+import gallery1 from "../assets/industrygallery/mining1.png"
+import gallery2 from "../assets/industrygallery/mining2.png"
+import gallery3 from "../assets/industrygallery/mining3.png"
 
 const data = {
   heroTitle: "Mining Industry",
   heroSubtitle: "High-Performance Epoxy Coatings",
   heroText: "Protect your critical assets with tailored epoxy coatings. Reduce downtime, prevent corrosion, and extend the life of your tanks, pipelines, and machinery.",
-  heroImage: "src/assets/heromining.png",
+  heroImage: mining.src,
   cta: { text: "Explore Products", link: "/products" },
 
   benefitsTitle: "How Cosmos Coatings Add Value",
@@ -27,9 +31,9 @@ const data = {
   ],
 
   gallery: [
-    "/src/assets/industrygallery/mining1.png",
-    "/src/assets/industrygallery/mining2.png",
-    "/src/assets/industrygallery/mining3.png"
+    gallery1.scr,
+    gallery2.scr,,
+    gallery3.scr,
   ]
 };
 ---

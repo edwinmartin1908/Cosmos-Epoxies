@@ -3,12 +3,16 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import IndustryLayout from "../layouts/Industry.astro";
+import metal  from "../assets/herometal.png"
+import gallery1 from "../assets/industrygallery/metal1.png"
+import gallery2 from "../assets/industrygallery/metal2.png"
+import gallery3 from "../assets/industrygallery/metal3.png"
 
 const data = {
   heroTitle: "Metal Construction",
   heroSubtitle: "Durable Epoxy Solutions for Civil Projects",
   heroText: "Protect bridges, tunnels, and industrial structures with high-performance epoxy coatings. Resist chemical attack, abrasion, and extreme weather conditions.",
-  heroImage: "src/assets/herometal.png",
+  heroImage: metal.src,
   cta: { text: "Explore Products", link: "/products" },
 
   benefitsTitle: "How Cosmos Coatings Add Value",
@@ -27,9 +31,9 @@ const data = {
   ],
 
   gallery: [
-    "/src/assets/industrygallery/metal1.png",
-    "/src/assets/industrygallery/metal2.png",
-    "/src/assets/industrygallery/metal3.png"
+    gallery1.src,
+    gallery2.src,
+    gallery3.src
   ]
 };
 ---
