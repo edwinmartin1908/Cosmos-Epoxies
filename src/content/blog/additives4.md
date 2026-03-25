@@ -3,7 +3,7 @@ title: "Why Additives Are the Hidden Drivers of Coating Performance"
 category: formulation
 subcategory: additives
 description: "Discover why additives, though present in small amounts, are the key components that control the real-world performance, durability, and reliability of epoxy coatings"
-image: "/src/assets/blogimages/additives/additives4.png"
+image: "/blogimages/additives/additives1.png"
 tags: ["Additives"]
 ---
 

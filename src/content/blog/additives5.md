@@ -3,7 +3,7 @@ title: "Difference Between Additives, Pigments, and Fillers"
 category: formulation
 subcategory: additives
 description: "Learn the key differences between additives, pigments, and fillers in epoxy coatings and how each contributes uniquely to performance, appearance, and cost"
-image: "/src/assets/blogimages/additives/additives5.png"
+image: "/blogimages/additives/additives1.png"
 tags: ["Additives"]
 ---
 

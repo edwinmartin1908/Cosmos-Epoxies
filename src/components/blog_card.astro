@@ -15,7 +15,7 @@ const { title, description, image, slug, category, subcategory } = Astro.props;
     <!-- IMAGE -->
     <div class="relative w-full md:w-[260px] h-[200px] md:h-[170px] shrink-0 overflow-hidden rounded-xl">
       <img 
-        <img src="/Cosmos-Coatings/blogimages/additives/additives1.png" alt="test" />
+        <img src={image} alt="test" />
         alt="" 
         class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
       />
