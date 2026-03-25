@@ -4,9 +4,7 @@ import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Product from "../layouts/product.astro";
 import image from "../assets/products/a81.png"
-import tec from "../assets/products sheets/a81/technical.pdf"
-import application from "../assets/products sheets/a81/application.pdf"
-import safety from "../assets/products sheets/a81/safety.pdf"
+
 
 const product = {
   name: "COSMO-EPOXY A-81™",
@@ -39,9 +37,9 @@ const product = {
 
   technology: "Epoxy Polyamide Technology reinforced with Zinc Phosphate (ZP) pigment, providing a dual protection mechanism through barrier performance and active corrosion inhibition, with enhanced flexibility for improved durability under mechanical and thermal stress.",
   
-  technicalsheet: tec.src,
-  applicationsheet:application.src,
-  safetysheet:safety.src
+  technicalsheet: "/Cosmos-Coatings/products sheets/a81/technical.pdf",
+  applicationsheet:"/Cosmos-Coatings/products sheets/a81/application.pdf",
+  safetysheet:"/Cosmos-Coatings/products sheets/a81/safety.pdf"
 };
 ---
 <Layout>

@@ -4,9 +4,7 @@ import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import Product from "../layouts/product.astro";
 import image from "../assets/products/prim.png"
-import tec from "../assets/products sheets/prim/technical.pdf"
-import application from "../assets/products sheets/prim/application.pdf"
-import safety from "../assets/products sheets/prim/safety.pdf"
+
 
 const product = {
   name: "COSMO-PRIM™",
@@ -42,9 +40,9 @@ const product = {
   technology:
     "Thermoplastic Acrylic Resin Technology, engineered for rapid solvent evaporation, excellent substrate wetting, and strong adhesion across a wide range of metallic surfaces, enabling fast recoating cycles and efficient application in high-throughput environments.",
 
-  technicalsheet: tec.src,
-  applicationsheet:application.src,
-  safetysheet:safety.src
+  technicalsheet: "/Cosmos-Coatings/products sheets/prim/technical.pdf",
+  applicationsheet:"/Cosmos-Coatings/products sheets/prim/application.pdf",
+  safetysheet:"/Cosmos-Coatings/products sheets/prim/safety.pdf"
 };
 
 ---
