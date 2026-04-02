@@ -1,0 +1,165 @@
+---
+import Card from "../../components/cardblog.astro";
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+
+// 🎯 AQUÍ CONTROLAS LOS TAGS
+const targetTags = ["Chemical Resistance", "Durability", "Adhesion"]; 
+
+const currentSlug = Astro.params?.slug;
+
+// 🔍 FILTRO MEJORADO (case insensitive + seguro)
+const filtered = posts.filter(post => {
+  if (post.slug === currentSlug) return false;
+
+  if (!post.data.tags) return false;
+
+  return post.data.tags.some(tag =>
+    targetTags.map(t => t.toLowerCase()).includes(tag.toLowerCase())
+  );
+});
+
+// 🎲 random
+const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+---
+
+<section class="bg-white pt-20 pb-10 md:pb-14">
+
+  <div class="max-w-[1400px] mx-auto px-6">
+
+    <!-- HEADER -->
+    <div class="flex items-end justify-between mb-6 md:mb-8">
+      <div>
+        <h2 class="text-3xl md:text-[40px] font-bold text-[#1f2c4c] mb-2">
+          Related Articles
+        </h2>
+        <p class="text-[#375668] max-w-[600px] text-[17px] md:text-[18px]">
+          Insights, innovations and technical knowledge tailored for this industry.
+        </p>
+      </div>
+
+      <!-- ARROWS -->
+      <div class="hidden md:flex gap-3">
+        <button id="prevBtn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#1f2c4c] hover:text-white transition">
+          ←
+        </button>
+        <button id="nextBtn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#1f2c4c] hover:text-white transition">
+          →
+        </button>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="overflow-hidden">
+      <div
+        id="carousel"
+        class="flex items-start gap-6 transition-transform duration-700 ease-in-out"
+      >
+        {shuffled.map((post) => (
+          <div class="min-w-[85%] sm:min-w-[48%] lg:min-w-[32%]">
+            <Card post={post} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+
+  let index = 0;
+  let interval;
+
+  function getVisibleItems() {
+    if (window.innerWidth >= 1024) return 3; // lg
+    if (window.innerWidth >= 640) return 2;  // sm
+    return 1; // mobile
+  }
+
+  function updateArrowStates() {
+    const items = carousel.children.length;
+    const visible = getVisibleItems();
+    const maxIndex = items - visible;
+
+    // Flecha prev
+    if (index <= 0) {
+      prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    } else {
+      prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+
+    // Flecha next
+    if (index >= maxIndex) {
+      nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    } else {
+      nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+  }
+
+  function goToSlide(i) {
+    const items = carousel.children.length;
+    const visible = getVisibleItems();
+
+    // 🚫 SI NO HAY SUFICIENTES ITEMS → reset
+    if (items <= visible) {
+      carousel.style.transform = `translateX(0px)`;
+      index = 0;
+      updateArrowStates();
+      return;
+    }
+
+    const maxIndex = items - visible;
+
+    if (i < 0) index = 0;
+    else if (i > maxIndex) index = maxIndex;
+    else index = i;
+
+    const offset = carousel.children[index].offsetLeft;
+    carousel.style.transform = `translateX(-${offset}px)`;
+
+    updateArrowStates();
+  }
+
+  function next() {
+    goToSlide(index + 1);
+  }
+
+  function prev() {
+    goToSlide(index - 1);
+  }
+
+  nextBtn?.addEventListener('click', next);
+  prevBtn?.addEventListener('click', prev);
+
+  function startAuto() {
+    const items = carousel.children.length;
+    const visible = getVisibleItems();
+
+    if (items <= visible) return;
+
+    interval = setInterval(next, 4000);
+  }
+
+  function stopAuto() {
+    clearInterval(interval);
+  }
+
+  startAuto();
+
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  window.addEventListener('resize', () => {
+    index = 0;
+    goToSlide(0);
+  });
+
+  // Inicial
+  updateArrowStates();
+</script>

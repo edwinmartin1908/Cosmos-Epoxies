@@ -1,0 +1,142 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Image from "../assets/products_hero_image.jpg";
+import ProductsCard from "../components/products_card.astro";
+---
+
+<Layout>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="bg-white border-b border-gray-200 py-24">
+    <div class="max-w-[1400px] mx-auto px-6 text-center">
+
+      <div class="text-xs tracking-[0.2em] uppercase text-gray-400 mb-6">
+        Protective Coating Systems
+      </div>
+
+      <h1 class="text-[48px] md:text-[56px] font-semibold text-[#111827] leading-tight">
+        High-Performance Industrial Coatings
+      </h1>
+
+      <p class="mt-6 text-[18px] text-gray-600 max-w-[720px] mx-auto leading-relaxed">
+        Engineered to deliver corrosion protection, chemical resistance, and long-term durability 
+        under the most demanding operational conditions.
+      </p>
+
+      <div class="mt-16">
+        <img
+          src={Image.src}
+          alt="Industrial epoxy coatings"
+          class="mx-auto max-h-[360px] object-contain"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="py-24 bg-[#F9FAFB]">
+    <div class="max-w-[1400px] mx-auto px-6">
+
+      <!-- HEADER -->
+      <div class="mb-16">
+        <h2 class="text-[34px] font-semibold text-[#111827]">
+          Product Portfolio
+        </h2>
+        <p class="mt-3 text-gray-500 max-w-[600px]">
+          Coating systems organized by chemistry and performance role within industrial protection schemes.
+        </p>
+      </div>
+
+      <!-- ===================== -->
+      <!-- EPOXY SYSTEMS -->
+      <!-- ===================== -->
+      <div class="mb-20">
+        <div class="mb-8">
+          <h3 class="text-[22px] font-semibold text-[#111827]">
+            Epoxy Systems
+          </h3>
+          <p class="text-gray-500 text-sm mt-1">
+            High-build coatings designed for corrosion protection, chemical resistance, and structural durability.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <ProductsCard
+            title="COSMOS E-65™"
+            body="Epoxy coating for corrosion protection in industrial environments."
+            link="e65.html"
+          />
+
+          <ProductsCard
+            title="COSMOS B-81™"
+            body="Barrier system for aggressive chemical exposure and long-term performance."
+            link="b81.html"
+          />
+
+          <ProductsCard
+            title="COSMOS M-81™"
+            body="Heavy-duty coating for abrasion resistance and structural protection."
+            link="m81.html"
+          />
+
+          <ProductsCard
+            title="COSMOS A-81™"
+            body="Epoxy system offering balanced chemical resistance and durability."
+            link="a81.html"
+          />
+        </div>
+      </div>
+
+      <!-- ===================== -->
+      <!-- POLYURETHANE -->
+      <!-- ===================== -->
+      <div class="mb-20">
+        <div class="mb-8">
+          <h3 class="text-[22px] font-semibold text-[#111827]">
+            Polyurethane Systems
+          </h3>
+          <p class="text-gray-500 text-sm mt-1">
+            UV-stable topcoats providing gloss retention, weather resistance, and long-term aesthetics.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <ProductsCard
+            title="COSMOS POLYURETHANE™"
+            body="Topcoat with UV stability, gloss retention, and mechanical durability."
+            link="poli.html"
+          />
+        </div>
+      </div>
+
+      <!-- ===================== -->
+      <!-- PRIMERS -->
+      <!-- ===================== -->
+      <div>
+        <div class="mb-8">
+          <h3 class="text-[22px] font-semibold text-[#111827]">
+            Primers
+          </h3>
+          <p class="text-gray-500 text-sm mt-1">
+            Adhesion-promoting layers designed to improve coating performance and substrate protection.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <ProductsCard
+            title="COSMO PRIM™"
+            body="Primer to enhance adhesion and corrosion resistance on metal substrates."
+            link="prim.html"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

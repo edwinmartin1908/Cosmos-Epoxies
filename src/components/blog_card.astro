@@ -1,0 +1,66 @@
+---
+const { title, description, image, slug, category, subcategory } = Astro.props;
+---
+
+<div
+  class="blog-card max-w-[1400px] mx-auto px-4 py-8 border-b border-gray-200 group"
+  data-category={category}
+  data-subcategory={subcategory}
+>
+  <a
+    href={`/${slug}`}
+    class="flex flex-col md:flex-row gap-6 items-start no-underline"
+  >
+    
+    <!-- IMAGE -->
+    <div class="relative w-full md:w-[260px] h-[200px] md:h-[170px] shrink-0 overflow-hidden rounded-xl">
+      <img 
+        src={image} 
+        alt="" 
+        class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
+      />
+    </div>
+
+    <!-- CONTENT -->
+    <div class="flex flex-col max-w-2xl">
+
+      <!-- CATEGORY -->
+      <span class="text-xs uppercase tracking-widest text-[#E77B00] font-semibold mb-2">
+        {category}
+      </span>
+
+      <!-- TITLE -->
+      <h2
+        class="text-[22px] md:text-[26px] font-semibold text-[#111827] leading-snug transition duration-300 group-hover:text-[#E77B00]"
+      >
+        {title}
+      </h2>
+
+      <!-- DESCRIPTION -->
+      <p
+        class="text-gray-600 mt-3 text-sm md:text-[15px] leading-relaxed"
+      >
+        {description}
+      </p>
+
+      <!-- FOOTER -->
+      <div class="mt-4 flex items-center justify-between">
+
+        <!-- READ -->
+        <span class="text-sm font-medium text-[#E77B00] flex items-center gap-1 group-hover:gap-2 transition-all">
+          Read article 
+          <span class="transition-transform group-hover:translate-x-1">→</span>
+        </span>
+
+        <!-- SUBCATEGORY -->
+        {subcategory && (
+          <span class="text-xs text-gray-400">
+            {subcategory}
+          </span>
+        )}
+
+      </div>
+
+    </div>
+  </a>
+</div>

@@ -1,0 +1,264 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../sections/Home/hero.astro";
+import Industries from "../sections/Home/industries.astro";
+import Dictionary from "../sections/Home/dictionary.astro";
+import Blog from "../sections/Home/blog.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <Navbar />
+  <Hero />
+  <section class="bg-[#F4F6F8] text-[#111827] max-w-[1200px] mx-auto">
+  <div class="max-w-[1200px] mx-auto px-6 py-28">
+
+    <!-- TOP CONTENT -->
+    <div class="max-w-[760px] mx-auto text-center">
+
+      <!-- LABEL -->
+      <div class="text-xs tracking-[0.25em] uppercase text-gray-400 mb-6">
+        Performance Engineering
+      </div>
+
+      <!-- HEADLINE -->
+      <h1 class="text-[36px] md:text-[44px] font-semibold leading-tight">
+        Reinforced Epoxy Systems
+        <span class="block text-[#E77B00] mt-2">
+          Built to Block Corrosion at the Source
+        </span>
+      </h1>
+
+      <!-- DESCRIPTION -->
+      <p class="mt-8 text-[18px] text-gray-600 leading-relaxed">
+        Cosmos coatings integrate lamellar flakes within the epoxy matrix,
+        forming a highly tortuous path that slows down the diffusion of water,
+        oxygen, and aggressive chemicals.
+      </p>
+
+    </div>
+
+    <!-- TECH VISUAL -->
+    <div class="mt-20 grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT: DIAGRAM -->
+      <div class="bg-white border border-gray-200 rounded-xl p-8">
+
+        <div class="text-sm text-gray-500 mb-6 uppercase tracking-wide">
+          Barrier Mechanism (Simplified)
+        </div>
+
+        <!-- LAYERS -->
+        <div class="space-y-4">
+
+          <!-- TOPCOAT -->
+          <div class="bg-gray-100 border border-gray-300 text-center py-3 text-sm">
+            Epoxy Matrix
+          </div>
+
+          <!-- GLASS FLAKE LAYER -->
+          <div class="relative bg-gray-50 border border-gray-300 py-6 px-4">
+
+            <div class="text-center text-sm mb-4 text-gray-500">
+              Reinforced Flake Layer
+            </div>
+
+            <!-- flakes -->
+            <div class="space-y-2">
+              <div class="h-[4px] bg-[#111827]/30 w-3/4"></div>
+              <div class="h-[4px] bg-[#111827]/30 w-2/3"></div>
+              <div class="h-[4px] bg-[#111827]/30 w-4/5"></div>
+              <div class="h-[4px] bg-[#111827]/30 w-1/2"></div>
+            </div>
+
+            <!-- diffusion path -->
+            <div class="absolute right-2 top-2 text-[10px] text-[#E77B00]">
+              Diffusion path ↑
+            </div>
+
+          </div>
+
+          <!-- SUBSTRATE -->
+          <div class="bg-[#111827] text-white text-center py-3 text-sm">
+            Steel Substrate
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: EXPLANATION -->
+      <div>
+
+        <h3 class="text-[24px] font-semibold mb-4">
+          Why It Works
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Unlike conventional coatings, the incorporation of aligned flakes
+          forces corrosive agents to travel a longer and more complex path before
+          reaching the substrate.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mb-8">
+          This significantly reduces permeability, delaying corrosion initiation
+          and extending the protective lifetime of the coating system.
+        </p>
+
+        <!-- METRICS -->
+        <div class="grid grid-cols-2 gap-6">
+
+          <div>
+            <div class="text-xl font-semibold text-[#111827]">High barrier</div>
+            <div class="text-sm text-gray-500">Reduced diffusion rate</div>
+          </div>
+
+          <div>
+            <div class="text-xl font-semibold text-[#111827]">Extended life</div>
+            <div class="text-sm text-gray-500">Lower maintenance cycles</div>
+          </div>
+
+          <div>
+            <div class="text-xl font-semibold text-[#111827]">Lamellar structure</div>
+            <div class="text-sm text-gray-500">Physical shielding effect</div>
+          </div>
+
+          <div>
+            <div class="text-xl font-semibold text-[#111827]">Corrosion delay</div>
+            <div class="text-sm text-gray-500">Slower substrate attack</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <Industries />
+  <Dictionary />
+  <Blog />
+  <Footer />
+</Layout>
+
+<style is:global>
+  body {
+    height: 100vh;
+  }
+
+  .concept-chip {
+    position: absolute;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .concept-chip:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+  }
+
+  .blog-section {
+    background: #16263d;
+    color: white;
+    padding: 60px 0;
+  }
+
+  .blog-container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 24px;
+  }
+
+  .blog-header h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .blog-header p {
+    color: #94a3b8;
+    max-width: 540px;
+    margin-bottom: 70px;
+    line-height: 1.6;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .blog-card {
+    display: block;
+    padding: 34px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+  }
+
+  .blog-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .blog-category {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #38bdf8;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .blog-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .blog-card p {
+    font-size: 14px;
+    color: #cbd5f5;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .read-more {
+    font-size: 14px;
+    color: #60a5fa;
+  }
+
+  .blog-footer {
+    margin-top: 60px;
+  }
+
+  .blog-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    transition: 0.25s;
+  }
+
+  .blog-button:hover {
+    transform: translateY(-2px);
+  }
+</style>

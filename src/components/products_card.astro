@@ -1,0 +1,59 @@
+
+---
+interface Props {
+  title: string;
+  body: string;
+  link: string;
+}
+
+const { title, body, link } = Astro.props;
+---
+
+<a
+  href={link}
+  class="group block bg-white border border-gray-200 rounded-lg p-7 transition 
+         hover:border-[#E77B00]/40 hover:shadow-md cursor-pointer"
+>
+  
+  <!-- TOP LINE (TECH STYLE) -->
+  <div class="flex items-center justify-between mb-4">
+    <span class="text-[11px] tracking-widest uppercase text-gray-400">
+      Coating System
+    </span>
+
+    <span class="text-xs text-gray-300 group-hover:text-[#E77B00] transition">
+      →
+    </span>
+  </div>
+
+  <!-- TITLE -->
+  <h3
+    class="text-[20px] font-semibold text-[#111827] leading-snug
+           group-hover:text-[#E77B00] transition"
+  >
+    {title}
+  </h3>
+
+  <!-- DIVIDER -->
+  <div class="mt-4 h-[1px] bg-gray-100 group-hover:bg-[#E77B00]/30 transition"></div>
+
+  <!-- DESCRIPTION -->
+  <p class="mt-4 text-gray-600 text-[14px] leading-relaxed">
+    {body}
+  </p>
+
+  <!-- CTA (TECH STYLE) -->
+  <div class="mt-6 flex items-center justify-between text-sm font-medium text-gray-500">
+    <span class="group-hover:text-[#E77B00] transition">
+      Technical details
+    </span>
+
+    <span class="group-hover:translate-x-1 group-hover:text-[#E77B00] transition">
+      →
+    </span>
+  </div>
+
+</a>
+
+
+    

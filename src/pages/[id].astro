@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import type { GetStaticPaths } from "astro";
+import MyArticle from "../layouts/Article.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+
+  return blog.map((blog) => ({
+    params: { id: blog.slug },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { data } = blog;
+const { title, category, subcategory, description, image } = data;
+
+const { Content } = await blog.render();
+---
+
+<Navbar />
+<MyArticle>
+  <div class="article-back">
+    <a href="../blog.html" class="article-back__link">
+      <i class="fas fa-arrow-left"></i> Back to Blog
+    </a>
+  </div>
+  <Content />
+</MyArticle>
+<Footer />
+
+<style>
+  /* Contenedor superior del artículo */
+  .article-back {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Link estilo breadcrumb */
+  .article-back__link {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem; /* espacio entre ícono y texto */
+    transition: color 0.3s ease;
+  }
+
+  .article-back__link i {
+    font-size: 0.9rem; /* tamaño del ícono */
+  }
+
+  /* Hover suave */
+  .article-back__link:hover {
+    color: #e77b00;
+  }
+
+
+</style>

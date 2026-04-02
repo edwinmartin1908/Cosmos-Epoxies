@@ -1,0 +1,46 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Product from "../layouts/product.astro";
+
+const product = {
+  name: "COSMO-EPOXY B-81™",
+  subtitle: "Anti-Corrosive Epoxy Polyamide Primer with Zinc Phosphate Protection",
+  image: "src/assets/products/b81.png",
+  description: "COSMO-EPOXY B-81™ is a high-performance epoxy polyamide primer engineered for industrial and marine environments where long-term corrosion protection is critical. Formulated with zinc phosphate pigment, this coating delivers excellent adhesion to properly prepared substrates and provides a robust barrier against aggressive corrosive conditions. It is specifically designed to withstand exposure to abrasion, chemical agents including acids and alkalis, solvents, and fresh water, making it a reliable foundation for multi-coat protective systems.",
+  family: "Epoxy Systems",
+  
+  benefits: [
+    "Advanced corrosion protection through zinc phosphate inhibition mechanism",
+    "Excellent adhesion to steel and properly prepared substrates",
+    "High resistance to aggressive environments including industrial and marine exposure",
+    "Outstanding chemical resistance to acids, alkalis, solvents and water",
+    "Superior abrasion resistance for extended service life",
+    "Compatible with a wide range of topcoat systems",
+    "Enhances durability and integrity of multi-layer coating systems",
+    "Reduces maintenance frequency and lifecycle costs"
+  ],
+
+  brand: "Cosmos Coatings",
+
+  industries: [
+    "Oil & Gas",
+    "Mining",
+    "Marine & Offshore",
+    "Heavy Industry",
+    "Infrastructure & Steel Construction",
+    "Petrochemical Plants"
+  ],
+
+  technology: "Epoxy Polyamide Technology reinforced with Zinc Phosphate (ZP) anti-corrosive pigment, designed to provide both barrier protection and active corrosion inhibition in severe service environments.",
+  technicalsheet:"/src/assets/products sheets/b81/technical.pdf",
+  applicationsheet:"/src/assets/products sheets/b81/application.pdf",
+  safetysheet:"/src/assets/products sheets/b81/safety.pdf"
+};
+---
+<Layout>
+    <Navbar/>
+    <Product product={product}/>
+    <Footer/>
+</Layout>

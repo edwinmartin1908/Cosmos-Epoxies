@@ -1,0 +1,1408 @@
+---
+
+---
+
+<!-- MENU PRINCIPAL -->
+<section
+  class="w-full bg-white border-b border-gray-200 sticky top-0 z-30 isolate"
+>
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div id="main-menu" class="flex items-center gap-6 py-5 overflow-x-auto">
+      <button
+        data-category="all"
+        class="menu-btn group relative text-[16px] font-semibold text-gray-900 pb-2 active"
+      >
+        All
+        <span class="underline"></span>
+      </button>
+
+      <button
+        data-category="properties"
+        class="menu-btn group relative text-[16px] font-medium text-gray-500 hover:text-gray-900 pb-2"
+      >
+        Coating properties <span class="count ml-2 text-xs text-gray-400"
+        ></span>
+        <span class="underline"></span>
+      </button>
+
+      <button
+        data-category="preparation"
+        class="menu-btn group relative text-[16px] font-medium text-gray-500 hover:text-gray-900 pb-2"
+      >
+        Substrate preparation <span class="count ml-2 text-xs text-gray-400"
+        ></span>
+        <span class="underline"></span>
+      </button>
+
+      <button
+        data-category="formulation"
+        class="menu-btn group relative text-[16px] font-medium text-gray-500 hover:text-gray-900 pb-2"
+      >
+        Formulation <span class="count ml-2 text-xs text-gray-400"></span>
+        <span class="underline"></span>
+      </button>
+
+      <button
+        data-category="technology"
+        class="menu-btn group relative text-[16px] font-medium text-gray-500 hover:text-gray-900 pb-2"
+      >
+        New technologies <span class="count ml-2 text-xs text-gray-400"></span>
+        <span class="underline"></span>
+      </button>
+
+      <button
+        data-category="dictionary"
+        class="menu-btn group relative text-[16px] font-medium text-gray-500 hover:text-gray-900 pb-2"
+      >
+        Dictionary
+        <span class="underline"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles-section" class="max-w-[1400px] mx-auto px-6 pt-16 pb-10">
+  <h1 class="text-5xl font-semibold text-[#111827]">Articles</h1>
+  <p class="text-lg text-gray-500 mt-3 mb-6">
+    Hidden gems from coating science
+  </p>
+  <div id="sub-menu" class="flex flex-wrap gap-3 mt-6"></div>
+</section>
+
+<!-- DICTIONARY -->
+<section
+  id="dictionary-section"
+  class="hidden max-w-[1400px] mx-auto px-6 pt-16 pb-16 min-h-screen"
+>
+  <div class="grid md:grid-cols-[1fr_460px] gap-20">
+    <div class="max-h-[800px] overflow-y-auto pr-4">
+      <h1 class="text-4xl font-semibold mb-4">Dictionary</h1>
+      <p class="text-gray-500 mb-6">Explore key concepts in coating science.</p>
+      <input
+        id="dictionary-search"
+        type="text"
+        placeholder="Search concept..."
+        class="w-full mb-6 px-4 py-3 border rounded-lg focus:outline-none focus:border-[#E77B00] focus:ring-2 focus:ring-[#E77B00]/20 transition-all"
+      />
+
+      <div
+        id="dictionary-container"
+        class="grid grid-cols-2 md:grid-cols-3 gap-6"
+      >
+      </div>
+    </div>
+
+    <div class="sticky top-24 h-fit z-10">
+      <div
+        id="definition-content"
+        class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm transition-all"
+      >
+        <h2 class="text-2xl font-semibold mb-2 text-gray-400">
+          Select a concept
+        </h2>
+        <p class="text-gray-400">Click on any term to see its definition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .menu-btn {
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+  }
+
+  .menu-btn .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #e77b00;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .menu-btn:hover .underline {
+    transform: scaleX(1);
+  }
+
+  .menu-btn.active {
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .menu-btn.active .underline {
+    transform: scaleX(1);
+  }
+
+  #dictionary-search {
+    border: 1px solid #d1d5db;
+  }
+
+  #dictionary-search:focus {
+    border-color: #e77b00;
+    box-shadow: 0 0 0 2px rgba(231, 123, 0, 0.15);
+  }
+
+  .term-item {
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.25s ease;
+    background: #fafafa;
+  }
+
+  .term-item:hover {
+    background: #f9f9f9;
+    transform: translateX(4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .term-item.active {
+  background: rgba(231, 123, 0, 0.1);
+  color: #111827;
+  font-weight: 600;
+}
+  .arrow {
+    font-size: 14px;
+    opacity: 0.5;
+    transition: all 0.2s;
+  }
+
+  .term-item:hover .arrow {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+
+  #dictionary-container h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #6b7280;
+  }
+</style>
+
+<script>
+  const subcategories = {
+    properties: ["Adhesion", "Chemical resistance", "Durability"],
+    preparation: ["Surface cleaning", "Abrasive blasting", "Profiling"],
+    formulation: ["Pigments", "Additives", "Binders"],
+    technology: ["Nanocoatings", "Smart coatings"],
+  };
+
+  const dictionaryData = [
+    {
+      name: "Adhesion",
+      definition: "The ability of a coating to stick to a substrate.",
+    },
+    {
+      name: "Binder",
+      definition: "The film-forming component that holds pigments together.",
+    },
+    {
+      name: "Curing",
+      definition: "Chemical reaction that hardens the coating.",
+    },
+    {
+      name: "Epoxy",
+      definition: "A thermosetting polymer known for high chemical resistance.",
+    },
+    { name: "Viscosity", definition: "The resistance of a liquid to flow." },
+    {
+      name: "Surface Tension",
+      definition:
+        "The energy required to increase the surface area of a liquid, affecting wetting and spreading.",
+    },
+    {
+      name: "Cohesion",
+      definition:
+        "The internal strength of a coating that holds the film together.",
+    },
+    {
+      name: "Crosslinking",
+      definition:
+        "The formation of chemical bonds between polymer chains during curing.",
+    },
+    {
+      name: "Pigment",
+      definition:
+        "A solid particle that provides color, opacity, and UV resistance.",
+    },
+    {
+      name: "Filler",
+      definition:
+        "An inert material added to coatings to improve properties and reduce cost.",
+    },
+    {
+      name: "Gloss",
+      definition: "The reflective property of a coating surface.",
+    },
+    {
+      name: "Matte Finish",
+      definition: "A low-gloss surface finish with minimal reflection.",
+    },
+    {
+      name: "Film Thickness",
+      definition: "The measured thickness of a dried or cured coating layer.",
+    },
+    {
+      name: "Drying Time",
+      definition:
+        "The time required for a coating to lose its solvent and solidify superficially.",
+    },
+    {
+      name: "Pot Life",
+      definition:
+        "The usable time of a mixed coating before it begins to cure.",
+    },
+    {
+      name: "Shelf Life",
+      definition: "The time a coating can be stored before losing performance.",
+    },
+    {
+      name: "Solvent",
+      definition: "A liquid used to dissolve or disperse coating components.",
+    },
+    {
+      name: "VOC",
+      definition:
+        "Volatile organic compounds released from coatings, regulated due to environmental impact.",
+    },
+    {
+      name: "Thixotropy",
+      definition:
+        "A property where a coating becomes less viscous when stirred or applied.",
+    },
+    {
+      name: "Sag Resistance",
+      definition:
+        "The ability of a coating to resist dripping or running on vertical surfaces.",
+    },
+    {
+      name: "Leveling",
+      definition:
+        "The ability of a coating to form a smooth, uniform surface after application.",
+    },
+    {
+      name: "Corrosion Resistance",
+      definition:
+        "The ability of a coating to protect a substrate from chemical attack.",
+    },
+    {
+      name: "Chemical Resistance",
+      definition:
+        "The ability of a coating to withstand exposure to acids, bases, and solvents.",
+    },
+    {
+      name: "Abrasion Resistance",
+      definition:
+        "The ability of a coating to resist wear and mechanical damage.",
+    },
+    {
+      name: "Impact Resistance",
+      definition:
+        "The ability of a coating to withstand sudden mechanical force without cracking.",
+    },
+    {
+      name: "Elongation",
+      definition: "The percentage a coating can stretch before breaking.",
+    },
+    {
+      name: "Hardness",
+      definition:
+        "The resistance of a cured coating to indentation or scratching.",
+    },
+    {
+      name: "Flexibility",
+      definition: "The ability of a coating to bend without cracking.",
+    },
+    {
+      name: "Adhesion Promoter",
+      definition:
+        "A chemical additive that enhances coating bonding to a substrate.",
+    },
+    {
+      name: "Surface Preparation",
+      definition:
+        "Cleaning or roughening a substrate to optimize coating adhesion.",
+    },
+    {
+      name: "Sandblasting",
+      definition:
+        "A method of surface preparation using abrasive particles to clean and profile surfaces.",
+    },
+    {
+      name: "Surface Profile",
+      definition:
+        "The roughness or texture of a substrate after preparation, influencing mechanical adhesion.",
+    },
+    {
+      name: "Anchor Pattern",
+      definition:
+        "The microscopic peaks and valleys that help a coating mechanically bond to the substrate.",
+    },
+    {
+      name: "Degreasing",
+      definition:
+        "The removal of oils and contaminants from a substrate before coating.",
+    },
+    {
+      name: "Acid Etching",
+      definition:
+        "A surface treatment that uses acids to clean and create a profile for better adhesion.",
+    },
+    {
+      name: "Blast Media",
+      definition:
+        "The abrasive material used in sandblasting to prepare surfaces.",
+    },
+    {
+      name: "Humidity Resistance",
+      definition:
+        "The ability of a coating to maintain properties under high moisture conditions.",
+    },
+    {
+      name: "UV Resistance",
+      definition:
+        "The ability of a coating to resist degradation from ultraviolet light exposure.",
+    },
+    {
+      name: "Oxidation Resistance",
+      definition:
+        "The ability of a coating to resist chemical reaction with oxygen over time.",
+    },
+    {
+      name: "Nanoparticles",
+      definition:
+        "Particles smaller than 100 nm used to enhance coating properties like barrier and mechanical strength.",
+    },
+    {
+      name: "Self-Healing",
+      definition:
+        "The ability of a coating to repair minor damage autonomously.",
+    },
+    {
+      name: "Smart Coating",
+      definition:
+        "A coating that reacts to environmental stimuli, damage, or chemical exposure.",
+    },
+    {
+      name: "Hydrophobic",
+      definition: "A property causing a surface to repel water.",
+    },
+    {
+      name: "Oleophobic",
+      definition: "A property causing a surface to repel oils.",
+    },
+    {
+      name: "Conductive Coating",
+      definition: "A coating designed to allow electrical conductivity.",
+    },
+    {
+      name: "Dielectric Coating",
+      definition: "An insulating coating that prevents electrical conduction.",
+    },
+    {
+      name: "Barrier Coating",
+      definition:
+        "A coating designed to prevent the passage of gases, liquids, or chemicals.",
+    },
+    {
+      name: "Primer",
+      definition:
+        "A base coating that improves adhesion and corrosion resistance before topcoat application.",
+    },
+    {
+      name: "Topcoat",
+      definition:
+        "The final layer of a coating system that provides appearance and protection.",
+    },
+    {
+      name: "Intermediate Coat",
+      definition:
+        "A layer between primer and topcoat that adds thickness and protection.",
+    },
+    {
+      name: "Two-Component Coating",
+      definition:
+        "A coating requiring mixing of resin and hardener before application.",
+    },
+    {
+      name: "One-Component Coating",
+      definition:
+        "A ready-to-use coating that cures via environmental triggers.",
+    },
+    {
+      name: "Catalyst",
+      definition:
+        "A substance that accelerates the curing reaction of a coating.",
+    },
+    {
+      name: "Accelerator",
+      definition: "An additive that speeds up curing without being consumed.",
+    },
+    {
+      name: "Inhibitor",
+      definition:
+        "A chemical that slows down curing or polymerization to extend pot life.",
+    },
+    {
+      name: "Epoxy Resin",
+      definition:
+        "A thermosetting polymer that provides chemical resistance and adhesion.",
+    },
+    {
+      name: "Polyamine Hardener",
+      definition:
+        "A curing agent that reacts with epoxy resin to form a crosslinked network.",
+    },
+    {
+      name: "Amine Epoxy",
+      definition: "Epoxy systems cured with amine-based hardeners.",
+    },
+    {
+      name: "Polyamide",
+      definition: "A flexible curing agent used in certain epoxy coatings.",
+    },
+    {
+      name: "Polyurethane",
+      definition:
+        "A polymer coating with high flexibility and chemical resistance.",
+    },
+    {
+      name: "Acrylic Coating",
+      definition:
+        "A coating based on acrylic polymers, providing UV stability and color retention.",
+    },
+    {
+      name: "Phenolic Coating",
+      definition: "A high-performance coating resistant to heat and chemicals.",
+    },
+    {
+      name: "Powder Coating",
+      definition:
+        "A dry coating applied electrostatically and cured under heat.",
+    },
+    {
+      name: "Cationic Coating",
+      definition:
+        "A coating that carries a positive charge to improve substrate adhesion.",
+    },
+    {
+      name: "Anionic Coating",
+      definition:
+        "A coating that carries a negative charge to improve adhesion or dispersion.",
+    },
+    {
+      name: "Surfactant",
+      definition:
+        "A chemical that improves wetting and disperses pigments or fillers.",
+    },
+    {
+      name: "Defoamer",
+      definition:
+        "An additive that reduces air entrapment during coating application.",
+    },
+    {
+      name: "Rheology Modifier",
+      definition:
+        "A chemical that adjusts the flow and sag properties of coatings.",
+    },
+    {
+      name: "Thinner",
+      definition: "A solvent used to reduce viscosity for application.",
+    },
+    {
+      name: "Levelling Agent",
+      definition:
+        "An additive that helps a coating flow evenly to produce a smooth surface.",
+    },
+    {
+      name: "Anti-Sag Agent",
+      definition:
+        "An additive that prevents coating from dripping on vertical surfaces.",
+    },
+    {
+      name: "Matting Agent",
+      definition: "An additive used to reduce gloss and create a matte finish.",
+    },
+    {
+      name: "UV Stabilizer",
+      definition: "An additive that protects coatings from UV degradation.",
+    },
+    {
+      name: "Antioxidant",
+      definition:
+        "An additive that prevents oxidative degradation of coatings.",
+    },
+    {
+      name: "Corrosion Inhibitor",
+      definition: "A chemical that slows or prevents substrate corrosion.",
+    },
+    {
+      name: "Pigment Volume Concentration",
+      definition:
+        "The ratio of pigment volume to total solid volume in a coating.",
+    },
+    {
+      name: "Critical Pigment Volume Concentration",
+      definition:
+        "The maximum pigment concentration before binder cannot fully wet particles, affecting performance.",
+    },
+    {
+      name: "Gloss Retention",
+      definition: "The ability of a coating to maintain its shine over time.",
+    },
+    {
+      name: "Color Stability",
+      definition: "The resistance of a coating to fading or color change.",
+    },
+    {
+      name: "Moisture Vapor Transmission",
+      definition: "The rate at which water vapor passes through a coating.",
+    },
+    {
+      name: "Elastic Modulus",
+      definition: "A measure of stiffness of a coating film.",
+    },
+    {
+      name: "Thermal Expansion",
+      definition:
+        "The dimensional change of a coating when exposed to temperature variations.",
+    },
+    {
+      name: "Coefficient of Friction",
+      definition:
+        "The resistance to sliding between the coating and another surface.",
+    },
+    {
+      name: "Outgassing",
+      definition: "The release of trapped gases from a coating during curing.",
+    },
+    {
+      name: "Blistering",
+      definition:
+        "Formation of bubbles under the coating due to trapped moisture or gases.",
+    },
+    {
+      name: "Chalking",
+      definition: "Surface powdering of a coating due to UV degradation.",
+    },
+    {
+      name: "Cratering",
+      definition:
+        "Small depressions or pits on the coating surface caused by contaminants or air bubbles.",
+    },
+    {
+      name: "Alligatoring",
+      definition:
+        "A cracking pattern resembling alligator skin, caused by aging or improper curing.",
+    },
+    {
+      name: "Delamination",
+      definition: "The separation of coating layers or from the substrate.",
+    },
+    {
+      name: "Fading",
+      definition:
+        "Loss of color intensity over time due to environmental exposure.",
+    },
+    {
+      name: "Sagging",
+      definition: "Downward flow of coating before it cures.",
+    },
+    {
+      name: "Wrinkling",
+      definition:
+        "Uneven surface caused by rapid solvent evaporation or curing.",
+    },
+    {
+      name: "Blushing",
+      definition:
+        "Formation of a milky appearance due to moisture in the coating.",
+    },
+    {
+      name: "Substrate",
+      definition: "The material surface on which a coating is applied.",
+    },
+    {
+      name: "Overcoating Interval",
+      definition: "The recommended time range to apply a subsequent coat.",
+    },
+    {
+      name: "Flash Point",
+      definition: "The lowest temperature at which coating vapors ignite.",
+    },
+    {
+      name: "Pot Life",
+      definition:
+        "The usable time of a mixed coating before it begins to cure.",
+    },
+    {
+      name: "Anti-Fouling",
+      definition:
+        "A property that prevents organisms or dirt from adhering to the coating surface.",
+    },
+    {
+      name: "Self-Healing Coating",
+      definition:
+        "A coating capable of autonomously repairing micro-damage or scratches.",
+    },
+    {
+      name: "Smart Coating",
+      definition:
+        "A coating that responds to environmental stimuli or damage to maintain performance.",
+    },
+    {
+      name: "Nanocoating",
+      definition:
+        "A coating incorporating nanoparticles to enhance barrier, mechanical, or chemical properties.",
+    },
+    {
+      name: "Nano-Filler",
+      definition:
+        "Nanoparticles added to coatings to improve strength, durability, or barrier properties.",
+    },
+    {
+      name: "Nano-Silica",
+      definition:
+        "Silica nanoparticles used to increase hardness, abrasion resistance, and adhesion.",
+    },
+    {
+      name: "Graphene Oxide",
+      definition:
+        "A nanomaterial used to enhance barrier properties and corrosion resistance.",
+    },
+    {
+      name: "Titanium Dioxide Nanoparticles",
+      definition:
+        "Used for UV protection and photoactive properties in coatings.",
+    },
+    {
+      name: "Zinc Oxide Nanoparticles",
+      definition:
+        "Provides UV resistance and antimicrobial properties in coatings.",
+    },
+    {
+      name: "Functionalized Nanoparticle",
+      definition:
+        "A nanoparticle modified to react or bond with the binder or substrate.",
+    },
+    {
+      name: "Microcapsule",
+      definition:
+        "Small capsules embedded in coatings to release healing agents or inhibitors when damaged.",
+    },
+    {
+      name: "Vascular Network",
+      definition:
+        "Internal channels in a coating that deliver healing agents to damaged areas.",
+    },
+    {
+      name: "Stimuli-Responsive Polymer",
+      definition:
+        "A polymer that changes properties in response to temperature, moisture, or pH.",
+    },
+    {
+      name: "Photochromic Coating",
+      definition: "A coating that changes color when exposed to light.",
+    },
+    {
+      name: "Thermochromic Coating",
+      definition:
+        "A coating that changes color or properties in response to temperature.",
+    },
+    {
+      name: "pH-Sensitive Coating",
+      definition:
+        "A coating that reacts or signals changes in acidity or alkalinity.",
+    },
+    {
+      name: "Self-Cleaning Coating",
+      definition:
+        "A coating that repels dirt, water, or contaminants, often using nanostructures.",
+    },
+    {
+      name: "Superhydrophobic Surface",
+      definition:
+        "A surface with extreme water repellency, often achieved with nanoscale roughness.",
+    },
+    {
+      name: "Oleophobic Surface",
+      definition: "A surface that repels oils and hydrocarbons.",
+    },
+    {
+      name: "Electroactive Coating",
+      definition:
+        "A coating that responds to electrical stimuli to change properties or provide protection.",
+    },
+    {
+      name: "Conductive Nanoparticle",
+      definition:
+        "A nanoparticle that provides electrical conductivity within a coating.",
+    },
+    {
+      name: "Dielectric Coating",
+      definition: "A coating designed to prevent electrical conduction.",
+    },
+    {
+      name: "Barrier Property",
+      definition:
+        "The ability of a coating to prevent the passage of liquids, gases, or chemicals.",
+    },
+    {
+      name: "Oxygen Transmission Rate",
+      definition:
+        "The rate at which oxygen passes through a coating, affecting corrosion resistance.",
+    },
+    {
+      name: "Water Vapor Transmission Rate",
+      definition: "The rate at which moisture passes through a coating.",
+    },
+    {
+      name: "Chemical Diffusion",
+      definition:
+        "Movement of chemicals through a coating, influencing protection performance.",
+    },
+    {
+      name: "Microcrack",
+      definition:
+        "Small cracks in a coating that can compromise barrier and adhesion properties.",
+    },
+    {
+      name: "Macrocrack",
+      definition: "Large visible cracks that compromise coating integrity.",
+    },
+    {
+      name: "Blister",
+      definition:
+        "A raised bubble under the coating caused by trapped moisture or gas.",
+    },
+    {
+      name: "Delamination",
+      definition:
+        "The separation of coating layers or coating from the substrate.",
+    },
+    {
+      name: "Alligatoring",
+      definition:
+        "Cracking pattern resembling alligator skin, often due to aging or stress.",
+    },
+    {
+      name: "Chalking",
+      definition: "Surface powdering due to UV or chemical degradation.",
+    },
+    { name: "Fading", definition: "Loss of color intensity over time." },
+    {
+      name: "Wrinkling",
+      definition: "Surface deformation caused by rapid curing or solvent loss.",
+    },
+    {
+      name: "Crazing",
+      definition:
+        "Fine cracks on the coating surface caused by stress or aging.",
+    },
+    {
+      name: "Sagging",
+      definition:
+        "Downward flow of coating on vertical surfaces before it cures.",
+    },
+    {
+      name: "Fish Eyes",
+      definition:
+        "Circular defects in coatings caused by surface contamination or poor wetting.",
+    },
+    {
+      name: "Pinholes",
+      definition:
+        "Tiny holes in a coating that allow ingress of moisture or chemicals.",
+    },
+    {
+      name: "Orange Peel",
+      definition:
+        "Surface roughness resembling an orange peel due to application or leveling issues.",
+    },
+    {
+      name: "Substrate Contaminant",
+      definition:
+        "Unwanted material on a surface that reduces adhesion or coating performance.",
+    },
+    {
+      name: "Rust",
+      definition:
+        "Oxidation of iron or steel that can interfere with coating adhesion.",
+    },
+    {
+      name: "Mill Scale",
+      definition:
+        "Layer of iron oxide on steel surfaces that must be removed before coating.",
+    },
+    {
+      name: "Degreasing",
+      definition: "Process of removing oils or grease from a substrate.",
+    },
+    {
+      name: "Solvent Wipe",
+      definition: "Cleaning a surface with solvent to remove contamination.",
+    },
+    {
+      name: "Surface Profiling",
+      definition:
+        "Creating controlled roughness on a substrate to enhance mechanical adhesion.",
+    },
+    {
+      name: "Anchor Pattern",
+      definition:
+        "Microscopic peaks and valleys that allow mechanical interlocking of coatings.",
+    },
+    {
+      name: "Blast Profile",
+      definition: "Roughness pattern achieved through abrasive blasting.",
+    },
+    {
+      name: "SPC (Surface Profile Checker)",
+      definition: "Tool used to measure substrate roughness before coating.",
+    },
+    {
+      name: "ISO 8501",
+      definition:
+        "Standards for surface cleanliness and preparation in coating applications.",
+    },
+    {
+      name: "ASTM D4417",
+      definition:
+        "Standard test method for measuring surface profile of blasted steel.",
+    },
+    {
+      name: "Salt Contamination",
+      definition:
+        "Residual salts on steel surfaces that promote coating failure.",
+    },
+    {
+      name: "Chloride Ion",
+      definition:
+        "Aggressive ion that accelerates corrosion if present on substrate.",
+    },
+    {
+      name: "Flash Rust",
+      definition:
+        "Rapid rust formation on steel after cleaning but before coating.",
+    },
+    {
+      name: "Overcoating Interval",
+      definition:
+        "Recommended time window to apply a subsequent coat for proper adhesion.",
+    },
+    {
+      name: "Pot Life",
+      definition: "Time period after mixing a coating that it remains usable.",
+    },
+    {
+      name: "Dry Film Thickness (DFT)",
+      definition: "Thickness of the cured coating layer on the substrate.",
+    },
+    {
+      name: "Wet Film Thickness (WFT)",
+      definition: "Thickness of a coating immediately after application.",
+    },
+    {
+      name: "Curing Agent",
+      definition: "Chemical that reacts with resin to harden the coating.",
+    },
+    {
+      name: "Amine Hardener",
+      definition: "Type of curing agent used with epoxy resins.",
+    },
+    {
+      name: "Polyamide Hardener",
+      definition: "Flexible curing agent for epoxy systems.",
+    },
+    {
+      name: "Phenolic Resin",
+      definition: "Heat-resistant resin used in high-performance coatings.",
+    },
+    {
+      name: "Polyurethane Resin",
+      definition:
+        "Flexible, chemically resistant resin for topcoats and industrial applications.",
+    },
+    {
+      name: "Acrylic Resin",
+      definition: "UV-stable polymer providing color retention and durability.",
+    },
+    {
+      name: "Powder Coating",
+      definition: "Dry coating applied electrostatically and cured under heat.",
+    },
+    {
+      name: "Electrostatic Spray",
+      definition:
+        "Method of coating application using charged particles to improve deposition.",
+    },
+    {
+      name: "Roller Application",
+      definition: "Coating application using rollers for large flat surfaces.",
+    },
+    {
+      name: "Airless Spray",
+      definition:
+        "High-pressure spray technique for fast and even coating application.",
+    },
+    {
+      name: "Brush Application",
+      definition:
+        "Manual coating application, suitable for small areas or touch-ups.",
+    },
+    {
+      name: "VOC Regulation",
+      definition:
+        "Limits on volatile organic compounds for environmental compliance.",
+    },
+    {
+      name: "Weathering",
+      definition:
+        "Degradation of coatings due to UV, moisture, and temperature over time.",
+    },
+    {
+      name: "Hydrolysis",
+      definition: "Chemical breakdown of coating polymers by water.",
+    },
+    {
+      name: "Oxidation",
+      definition:
+        "Degradation caused by reaction with oxygen, often leading to loss of gloss or color.",
+    },
+    {
+      name: "Hydrophobic Additive",
+      definition:
+        "Material added to coatings to repel water and improve barrier properties.",
+    },
+    {
+      name: "Oleophobic Additive",
+      definition:
+        "Material added to repel oils and reduce surface contamination.",
+    },
+    {
+      name: "Electrochemical Protection",
+      definition:
+        "Mechanism to prevent corrosion using electrical or sacrificial methods.",
+    },
+    {
+      name: "Sacrificial Coating",
+      definition:
+        "A coating designed to corrode preferentially, protecting the substrate.",
+    },
+    {
+      name: "Inhibitor Release",
+      definition:
+        "Mechanism where corrosion inhibitors are released from a coating when needed.",
+    },
+    {
+      name: "Barrier Layer",
+      definition:
+        "Coating layer that prevents moisture, chemicals, or oxygen from reaching the substrate.",
+    },
+    {
+      name: "Layer Adhesion",
+      definition: "The bond strength between successive coating layers.",
+    },
+    {
+      name: "Cohesive Failure",
+      definition:
+        "Failure within the coating film itself, rather than at the interface.",
+    },
+    {
+      name: "Adhesive Failure",
+      definition:
+        "Failure at the interface between the coating and the substrate.",
+    },
+    {
+      name: "Stress Distribution",
+      definition:
+        "How mechanical or thermal stress is transferred across the coating.",
+    },
+    {
+      name: "Elastic Recovery",
+      definition:
+        "Ability of a coating to return to its original shape after deformation.",
+    },
+    {
+      name: "Nano-Functionalization",
+      definition:
+        "Modification of nanoparticles to perform specific chemical or mechanical roles in coatings.",
+    },
+    {
+      name: "Multi-Functional Coating",
+      definition:
+        "A coating that combines multiple protective or responsive functions.",
+    },
+    {
+      name: "Monitoring Coating",
+      definition:
+        "Coatings integrated with sensors to detect corrosion, damage, or chemical exposure.",
+    },
+    {
+      name: "Predictive Maintenance Coating",
+      definition:
+        "Coating that signals potential failures to schedule maintenance proactively.",
+    },
+    {
+      name: "Sustainability Coating",
+      definition: "Eco-friendly coatings with low VOC and long service life.",
+    },
+    {
+      name: "High-Solids Coating",
+      definition:
+        "Coating with high resin content, reducing VOC and improving thickness per coat.",
+    },
+    {
+      name: "Low-Solids Coating",
+      definition:
+        "Coating with lower resin content, easier application but may require more coats.",
+    },
+    {
+      name: "Multilayer System",
+      definition:
+        "Combination of primer, intermediate, and topcoat layers for optimal performance.",
+    },
+    {
+      name: "Coating Failure",
+      definition:
+        "Loss of protective function due to adhesion loss, cracking, or chemical degradation.",
+    },
+    {
+      name: "Barrier Failure",
+      definition:
+        "Failure caused by penetration of water, chemicals, or oxygen through the coating.",
+    },
+    {
+      name: "Mechanical Degradation",
+      definition: "Damage to a coating caused by abrasion, impact, or flexing.",
+    },
+    {
+      name: "Environmental Degradation",
+      definition:
+        "Coating deterioration caused by UV, temperature, or moisture exposure.",
+    },
+    {
+      name: "Nano-Reinforcement",
+      definition:
+        "Use of nanoparticles to enhance mechanical strength, adhesion, and barrier properties.",
+    },
+    {
+      name: "Coating Longevity",
+      definition:
+        "The total service life a coating can provide under specified conditions.",
+    },
+    {
+      name: "Maintenance Interval",
+      definition:
+        "Recommended period between inspection or recoating for optimal performance.",
+    },
+    {
+      name: "Cost-Effectiveness",
+      definition:
+        "The balance of coating performance, durability, and application cost.",
+    },
+    {
+      name: "Film Formation",
+      definition:
+        "The process by which a coating transforms from a liquid state into a continuous, solid film.",
+    },
+    {
+      name: "Corrosion",
+      definition:
+        "The degradation of a material, typically metal, due to chemical or electrochemical reactions with its environment.",
+    },
+    {
+      name: "Pigment Volume Concentration",
+      definition:
+        "The ratio of the volume of pigment to the total volume of non-volatile components in a coating.",
+    },
+    {
+      name: "Solvent Evaporation",
+      definition:
+        "The process by which solvents in a coating volatilize, allowing the remaining components to form a solid film.",
+    },
+    {
+      name: "Rheology",
+      definition:
+        "The study of how a coating flows and deforms under applied forces during mixing, application, and curing.",
+    },
+  ];
+
+  const mainButtons = document.querySelectorAll("#main-menu button");
+  const subMenu = document.getElementById("sub-menu");
+  const cards = document.querySelectorAll(".blog-card");
+
+  const articlesSection = document.getElementById("articles-section");
+  const dictionarySection = document.getElementById("dictionary-section");
+
+  // ✅ FIX: ahora "All" también cuenta
+  function updateCategoryCounts() {
+    mainButtons.forEach((button) => {
+      const category = button.dataset.category;
+
+      // 🔥 ALL
+      if (category === "all") {
+        const count = cards.length;
+        const span = button.querySelector(".count");
+
+        // si no existe el span, lo creamos
+        if (!span) {
+          const newSpan = document.createElement("span");
+          newSpan.className = "count";
+          newSpan.textContent = ` (${count})`;
+          button.appendChild(newSpan);
+        } else {
+          span.textContent = `(${count})`;
+        }
+
+        return;
+      }
+
+      if (category === "dictionary") return;
+
+      const relatedSubcategories = subcategories[category] || [];
+
+      const slugs = relatedSubcategories.map((sub) =>
+        sub.toLowerCase().replaceAll(" ", "-"),
+      );
+
+      const count = [...cards].filter((card) =>
+        slugs.includes(card.dataset.subcategory),
+      ).length;
+
+      const span = button.querySelector(".count");
+      if (span) span.textContent = `(${count})`;
+    });
+  }
+
+  function renderSubcategories(list, category = "all") {
+  subMenu.innerHTML = "";
+
+  list.forEach((item, index) => {
+    const slug = item.toLowerCase().replaceAll(" ", "-");
+
+    const count = [...cards].filter(
+      (card) => card.dataset.subcategory === slug,
+    ).length;
+
+    const btn = document.createElement("button");
+
+    btn.dataset.subcategory = slug;
+
+    btn.className = `
+      sub-btn relative text-[14px] font-medium text-gray-600
+      pr-3 py-1.5 rounded-md
+      cursor-pointer
+      transition-all duration-200 ease-out
+      hover:text-gray-900 hover:after:h-[2px]
+      after:content-[''] after:absolute after:left-0 after:-bottom-[2px]
+      after:w-full after:h-[2px]
+      after:bg-[#e77b00]
+      after:scale-x-0 after:origin-left
+      after:transition-transform after:duration-300
+      after:h-[1.5px]
+      hover:after:scale-x-100
+    `;
+
+    btn.innerHTML = `${item} <span class="ml-1 text-xs text-gray-400">(${count})</span>`;
+
+    // ✅ Solo activar si no es 'all' y hay cards filtrados
+    if (category !== "all" && index === 0 && count > 0) {
+      btn.classList.add("active");
+    }
+
+    subMenu.appendChild(btn);
+  });
+}
+  function filterCards(category) {
+    if (category === "all") {
+      cards.forEach((card) => (card.style.display = "block"));
+      return;
+    }
+
+    const relatedSubcategories = subcategories[category] || [];
+
+    const slugs = relatedSubcategories.map((sub) =>
+      sub.toLowerCase().replaceAll(" ", "-"),
+    );
+
+    cards.forEach((card) => {
+      card.style.display = slugs.includes(card.dataset.subcategory)
+        ? "block"
+        : "none";
+    });
+  }
+
+  function groupAlphabetically(data) {
+    const grouped = {};
+    data.forEach((item) => {
+      const letter = item.name[0].toUpperCase();
+      if (!grouped[letter]) grouped[letter] = [];
+      grouped[letter].push(item);
+    });
+    return grouped;
+  }
+
+  function renderDictionary(filter = "") {
+    const container = document.getElementById("dictionary-container");
+    const panel = document.getElementById("definition-content");
+
+    container.innerHTML = "";
+
+    const filtered = dictionaryData.filter((d) =>
+      d.name.toLowerCase().includes(filter.toLowerCase()),
+    );
+
+    const grouped = groupAlphabetically(filtered);
+
+    Object.keys(grouped)
+      .sort()
+      .forEach((letter) => {
+        const section = document.createElement("div");
+
+        section.innerHTML = `
+        <h2 class="text-lg font-semibold text-gray-500 mb-3">${letter}</h2>
+        <div class="space-y-2">
+          ${grouped[letter]
+            .map(
+              (item) => `
+            <div class="term-item" data-name="${item.name}">
+              <span class="cursor-pointer">${item.name}</span>
+              <span class="arrow cursor-pointer">→</span>
+            </div>
+          `,
+            )
+            .join("")}
+        </div>
+      `;
+
+        container.appendChild(section);
+      });
+
+    const items = document.querySelectorAll(".term-item");
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        items.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+
+        const data = dictionaryData.find((d) => d.name === item.dataset.name);
+
+        panel.innerHTML = `
+          <h2 class="text-3xl font-semibold mb-4">${data.name}</h2>
+          <p class="text-gray-600 leading-relaxed">${data.definition}</p>
+        `;
+      });
+    });
+  }
+
+  const allSubcategories = Object.values(subcategories).flat();
+
+  renderSubcategories(allSubcategories);
+  updateCategoryCounts();
+
+  mainButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      mainButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const category = button.dataset.category;
+
+      if (category === "dictionary") {
+        articlesSection.classList.add("hidden");
+        dictionarySection.classList.remove("hidden");
+        renderDictionary();
+        cards.forEach((c) => (c.style.display = "none"));
+        return;
+      }
+
+      dictionarySection.classList.add("hidden");
+      articlesSection.classList.remove("hidden");
+
+      filterCards(category);
+
+      renderSubcategories(
+        category === "all" ? allSubcategories : subcategories[category],
+      );
+    });
+  });
+
+  subMenu.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button || !button.dataset.subcategory) return;
+
+    // 🔥 remover active de todos
+    const allSubBtns = subMenu.querySelectorAll(".sub-btn");
+    allSubBtns.forEach((btn) => btn.classList.remove("active"));
+
+    // 🔥 activar el clickeado
+    button.classList.add("active");
+
+    // 🔥 filtrar cards
+    cards.forEach((card) => {
+      card.style.display =
+        card.dataset.subcategory === button.dataset.subcategory
+          ? "block"
+          : "none";
+    });
+  });
+
+  document
+    .getElementById("dictionary-search")
+    .addEventListener("input", (e) => {
+      renderDictionary(e.target.value);
+    });
+
+  function getTermFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("term");
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const term = getTermFromURL();
+    if (!term) return;
+
+    const dictionaryBtn = document.querySelector(
+      '[data-category="dictionary"]',
+    );
+
+    if (dictionaryBtn) {
+      dictionaryBtn.click();
+    }
+
+    setTimeout(() => {
+      const items = document.querySelectorAll(".term-item");
+      const panel = document.getElementById("definition-content");
+
+      items.forEach((item) => {
+        const slug = item.dataset.name.toLowerCase().replaceAll(" ", "-");
+
+        if (slug === term) {
+          item.classList.add("active");
+
+          const data = dictionaryData.find((d) => d.name === item.dataset.name);
+
+          if (data && panel) {
+            panel.innerHTML = `
+              <h2 class="text-3xl font-semibold mb-4">${data.name}</h2>
+              <p class="text-gray-600 leading-relaxed">${data.definition}</p>
+            `;
+          }
+
+          item.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    }, 400);
+  });
+</script>

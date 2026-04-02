@@ -1,0 +1,40 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import IndustryLayout from "../layouts/Industry.astro";
+
+const data = {
+  heroTitle: "Mining Industry",
+  heroSubtitle: "High-Performance Epoxy Coatings",
+  heroText: "Protect your critical assets with tailored epoxy coatings. Reduce downtime, prevent corrosion, and extend the life of your tanks, pipelines, and machinery.",
+  heroImage: "src/assets/heromining.png",
+  cta: { text: "Explore Products", link: "/products" },
+
+  benefitsTitle: "How Cosmos Coatings Add Value",
+  benefitsSubtitle: "Our coatings are scientifically formulated for mining operations to maximize uptime and protect your investments.",
+  benefits: [
+    { icon: "💧", title: "Corrosion Protection", text: "Prevents rust and chemical damage in tanks, pipelines, and steel structures.", example: "A coated slurry tank lasts 3x longer." },
+    { icon: "🛠️", title: "Reduced Maintenance", text: "Resist abrasion and chemical wear, reducing downtime and repair costs.", example: "Pipeline maintenance cycles extended by 40%." },
+    { icon: "⏱️", title: "Maximized Uptime", text: "Keep machinery running continuously in extreme mining conditions.", example: "Continuous operation during peak production cycles." }
+  ],
+
+  applicationsTitle: "Advanced Applications",
+  applicationsSubtitle: "Where our high-performance coatings make a difference in mining operations:",
+  applications: [
+    { title: "Where We Apply", items: ["Tanks & hoppers handling abrasive slurries", "Pipelines transporting corrosive materials", "Heavy machinery and conveyor chutes", "Anti-slip floors"] },
+    { title: "Benefits to Your Operation", items: ["Extended equipment life → lower CAPEX", "Fewer repairs & downtime → higher productivity", "Reduced chemical damage → safer operations", "Predictable maintenance → better ROI"] }
+  ],
+
+  gallery: [
+    "/src/assets/industrygallery/mining1.png",
+    "/src/assets/industrygallery/mining2.png",
+    "/src/assets/industrygallery/mining3.png"
+  ]
+};
+---
+<Layout>
+  <Navbar/>
+  <IndustryLayout data={data} />
+  <Footer/>
+</Layout>

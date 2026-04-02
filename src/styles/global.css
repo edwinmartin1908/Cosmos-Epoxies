@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+/* ========================= */
+/* BASE ARTICLE */
+/* ========================= */
+
+.pro-article {
+  max-width: 860px;
+  margin: 116px auto;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  color: #1f2937;
+  font-size: 1.125rem;
+}
+
+/* ========================= */
+/* HERO TITLE */
+/* ========================= */
+
+.pro-article h1 {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.pro-article h1 + p {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 2.5rem;
+}
+
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
+
+.pro-article h2 {
+  font-size: 2rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  color: #0f172a;
+  font-weight: 600;
+  position: relative;
+}
+
+.pro-article h2::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #E77B00;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.pro-article h3 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+.pro-article p {
+  margin-bottom: 1.5rem;
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.pro-article p + p {
+  margin-top: -0.5rem;
+}
+
+.pro-article strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.pro-article em {
+  color: #e77b00;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* LISTS (FIXED - estilo pro) */
+/* ========================= */
+
+.pro-article ul {
+  list-style: none; /* quitamos bullets nativos */
+  margin: 1.5rem 0 2rem 0;
+  padding-left: 0;
+}
+
+.pro-article li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 20px;
+  color: #334155;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* bullet custom tipo SaaS */
+.pro-article ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #E77B00;
+  border-radius: 50%;
+}
+
+/* listas ordenadas */
+.pro-article ol {
+  margin: 1.5rem 0 2rem 1.5rem;
+  padding-left: 1rem;
+  list-style-type: decimal;
+}
+
+.pro-article ol li::marker {
+  color: #E77B00;
+  font-weight: 600;
+}
+
+/* LISTAS ANIDADAS */
+.pro-article ul ul,
+.pro-article ol ul,
+.pro-article ol ol,
+.pro-article ul ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+/* bullets secundarios (más sutiles) */
+.pro-article ul ul li::before {
+  width: 5px;
+  height: 5px;
+  background: #C65A00;
+}
+
+/* ========================= */
+/* BLOCKQUOTE */
+/* ========================= */
+
+.pro-article blockquote {
+  border-left: 4px solid #E77B00;
+  background: linear-gradient(to right, #fff7ed, #ffffff);
+  padding: 1.4rem 1.6rem;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+/* ========================= */
+/* TABLES */
+/* ========================= */
+
+.pro-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pro-article th,
+.pro-article td {
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem 1rem;
+}
+
+.pro-article th {
+  background-color: #0f172a;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* CODE */
+/* ========================= */
+
+.pro-article pre {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  padding: 1.4rem;
+  overflow-x: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.pro-article code {
+  background-color: #f1f5f9;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+.pro-article a {
+  color: #E77B00;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231,123,0,0.3);
+  transition: all 0.25s ease;
+}
+
+.pro-article a:hover {
+  color: #c65a00;
+  border-bottom-color: #c65a00;
+}
+
+/* ========================= */
+/* IMAGES */
+/* ========================= */
+
+.pro-article img {
+  max-width: 100%;
+  height: auto;
+  margin: 2.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: block;
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+
+.pro-article hr {
+  border: none;
+  border-top: 2px solid #E77B00;
+  margin: 3rem 0;
+}
+
+/* ========================= */
+/* CALLOUT */
+/* ========================= */
+
+.callout {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #e77b00;
+  padding: 1.2rem 1.4rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+
+.sub-btn.active {
+  @apply text-gray-900 font-semibold after:scale-x-100 after:h-[2px]
+}
+
+.sub-btn.active::after {
+  transform: scaleX(1);
+}
